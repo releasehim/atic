@@ -1,0 +1,143 @@
+Teorico 12-07-2024 Tema1
+
+1 - Cuando se realiza un alta en un arbol b
+a - Se debe realizar en un nodo interno del arbol
+b - Se puede realizar en un nodo interno del arbol
+c - Puede llegar a necesitar una division del nodo raiz
+d - Es necesario llegar a un nodo hoja
+e - Algunas de las anteriores x
+f  - Ninguna de las anteriores
+
+e
+
+2 - Sabiendo que la eficiencia de busqueda de una clave candidata implementada
+     por un arbol b, es de orden logaritmico entonces la eficiencia de busqueda de
+     una clave secundaria implementada por un arbol b es
+a - Orden lineal
+b - Orden logaritmico x
+c - Orden constante
+d - Es uno
+
+b
+
+3 - Si se realiza la baja de un registro en un archivo
+a - Es igual de eficiente hacer una baja logica que una baja fisica
+b - Es mas eficiente hacer una baja logica que una baja fisica
+c - Es menos eficiente hacer una baja logica que una baja fisica
+d - Ninguna de las anteriores x
+
+d
+
+4 - Un archivo directo con registros de longitud fija
+a - Puede ocupar mas espacio que el mismo archivos con registros de longitud variable
+b - Puede ocupar el mismo espacio que el mismo archivo con registros de longitud variable
+c - Ocupa menos espacio que el mismo archivo con registros de longitud variable x
+d - Ninguna de las anteriores
+
+c
+
+5 - El acceso promedio para recuperar un dato en un archivo ordenado
+a - Tiene orden lineal
+b - Tiene orden logaritmico x
+c - Tiene orden constante
+d - Las opciones a y b son verdaderas
+e - Hay dos opciones pero no la a y la b
+f  - Ninguna de las anteriores
+
+b
+
+6 - Los archivos con registros de longitud variable
+a - Ocupan menos espacio que los archivos con registro de longitud fija x
+b - Ocupan mas espacio que los archivos con registro de longitud fija
+c - Ocupan el mismo espacio que los archivos con registro de longitud fija
+d - Ninguna de las anteriores es valida
+
+a
+
+7 - A partir del NRR de un archivo
+a - Se puede acceder a un registro de un archivo fragmentado en un solo acceso
+b - Se puede acceder a un archivo de un archivo no fragmentado en un solo acceso
+c - Se puede acceder a un registro de un archivo en un solo acceso
+d - Se puede lograr acceso directo a un archivo
+e - Todas las anteriores
+f  - Algunas de las anteriores x
+g - Ninguna de las anteriores
+
+f
+
+8 - Un arbol B+ con prefijos simples
+a - Puede desbalancearse
+b - Puede estar balanceado
+c - Esta balanceado x
+d - Puede no estar balanceado
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+c
+
+9 - Dado un indice de un archivo
+a - La cantidad de acceso para encontrar una clave es entre 1 y 2
+b - La cantidad de acceso es mayor a 2
+c - La cantidad de acceso para encontrar una clave es menor a 4 
+d - La cantidad de acceso para encontrar una clave es mayor a 4
+e - Sus registros son de longitud fija x
+
+e
+
+10 - Si se implementa un algoritmo que permite generar un arbol B+. Ese algoritmo
+a - Necesita tener acceso a dos nodos en cada momento
+b - Necesita tener acceso a al menos dos nodos en cada momento
+c - Las estructuras internas del arbol pueden implementarse como un arbol B*
+d - Todas las anteriores
+e - Algunas de las anteriores
+f  - Ninguna de la anteriores x
+
+f
+
+11 - Si se quiere dispersar un archivo de 40000 elementos
+a - Se requiere un archivo de 40000 cubetas
+b - Se requiere un archivo de al menos 40000 cubetas
+c - Se requiere un archivo de a lo sumo 40000 cubetas x
+d - Todas las anteriores
+e - Algunas de las anteriores
+f  - Ninguna de las anteriores
+
+c
+
+12 - La densidad de empaquetamiento
+a - Es el principal parametro de hashing
+b - Es un parametro de eficiencia para hashing estatico x
+c - Evita la existencia de colisiones y por ende de overflow
+d - Ninguna es correcta
+
+b
+
+13 - El metodo de tratamiento de desbordes
+a - Afectar la densidad de empaquetamiento
+b - Puede afectar la densidad de empaquetamiento
+c - Afecta la densidad de empaquetamiento solo con algunas variantes
+     de tratamiento de desborde
+d - Es necesario cuando se aplica hash estatico
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores x
+
+g
+
+14 - Cuando se produce una baja en hash estatico, sobre el archivo de datos
+a - Se realiza una operacion de escritura y una de lectura
+b - Se realiza al menos una operacion de lectura y al menos de escritura x
+c - Se realiza una operacion de lectura y al menos una de escritura
+d - Se realiza una operacion escritura y al menos una de lectura
+
+b
+
+15 - Si hubo saturacion con hashing
+a - Ocurrio colision al menos 2 veces
+b - No ocurrio colision
+c - Se trata con saturacion progresiva x
+d - Algunas de las anteriores
+e - Ninguna de la anteriores
+
+c

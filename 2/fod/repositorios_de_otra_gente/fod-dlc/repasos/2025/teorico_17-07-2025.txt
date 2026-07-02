@@ -1,0 +1,148 @@
+Teorico Fod 12-07-2025
+
+1 - Un archivo
+a - Tiene acceso Directo y orden de busqueda lineal
+b - Tiene acceso Directo y orden de busqueda logaritmica
+c - Tiene acceso Directo y orden de busqueda exponencial
+d - Tiene acceso secuencial indizado y orden de busqueda lineal
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de la anteriores
+
+2 - Un proceso de corte de control, para que sea lo mas eficiente posible en terminos de
+     rendimiento/perfonmance
+a - Se debe aplicar con todos los archivos ordenados con algun criterio
+b - Se debe aplicar con todos los archivos desordenados
+c - Se debe aplcar con algunos de los archivos ordenados por algun criterio y el resto desordenados
+d - Se debe aplicar con cada uno de los n archivos ordenados por diferentes criterios
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+3 - Una clave secundaria
+a - Indentifica univocamente un elemento del archivo
+b - Identifica varios elementos de un archivo
+c - Esta constituida por al menos dos atributos del archivo donde esta definida
+d - Todas las anteriores
+e - Algunas de las anteriores
+f  - Ninguna de las anteriore
+
+4 - Un indice implementado con un arbol B
+a - Puede desbalancearse
+b - Puede estar balanceado
+c - Puede balancearse
+d - Se desbalancea facilmentee - Esta balanceado
+f  - Todas las anteriores
+g - Algunas de las anteriores
+h - Ninguna de las anteriores
+
+5 - Dado un indice de un archivo con registros de longitud variable
+a - Sus registros pueden ser de longitud variable
+b - Sus registros deben ser de longitud variable
+c - Sus registros pueden ser de longitud fija
+d - Sus registros son de longitud fija
+
+6 - Una funcion de hash uniforme
+a - Tiene un promedio 1, de acceso a registros
+b - Tiene un promedio entre 1 y 2, de acceso a registros
+c - Tiene un promedio menor a 1, de acceso a registros
+d - Ninguna dee las anteriores
+
+7 - La densidad de empaquetamiento
+a - Se modifica con cada alta o baja
+b - Se modifica con cada alta
+c - Se modifica con cada baja
+d - Todas las anteriores
+e - Algunas de las anteriores
+f  - Niguna de las anteriores
+
+8 - Un indice primario es
+a - Una estructura de datos adicional que permite asociar una o varias claves primarias con una clave secundaria
+b - Una estructura de datos adicional que contiene el mismo volumen de informacion que el archivo original
+c - Una estructura de datos adicional que permite asociar una o varias claves secundarias con una clave primaria
+d - Una estructura de datos adicional que establece un orden logico del archivo original
+e - Una estructura de datos adicional que permite relacionar una clave primaria con otra clave cansidata
+f  - Hay mas de una opcion valida
+g - Todas las opciones anteriores son correctas
+h - Ninguna de las opciones anterriores es correcta
+
+9 - Cuando se realiza una baja en un arbol B
+a - El elemento que se elimina debe estar en un nodo interno del arbol
+b - Puede existir underflow y propagarse hasta el nodo raiz
+c - Siempre es necesario liberar un nodo
+d - El arbol disminuye de nivel
+e - No es necesario acceder al nivel hoja
+f  - Hay mas de una opcion valida
+g - Todas las anteriores son correctas
+h - Ninguna de las opciones anteriores es correcta
+
+10 - El mtodo de saturacion progresiva encadenada
+a - Reubica las claves en saturacion
+b - Reubica las claves en saturacion en la cubeta mas cercana disponible
+c - Reubica las claves en saturacion en la cubeta mas cercana disponible generando un enlace con las claves sinonimo
+d - Reubica las claves en colision que estan en saturacion
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+11 - La tecnica de hash extensible
+a - No admite colisiones
+b - Admite colisiones, pero no saturaciones
+c - Admite colisiones y saturaciones
+d - Admite colisiones solo con cubetas con espacio para 2 claves
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+12 - Indique el parametro mas importante al aplicar hashing
+a - Funcion de hashing
+b - Densidad de empaquetamiento
+c - Metodo de tratamiento de claves en saturacion
+d - Tamaños de los nodos o cubetas
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+13 - Para realizar un algoritmo de merge de 100 archivos
+a - Cada archivo debe tener al menos un registro
+b - Cada archivo debe tener al menos dos registros
+c - Todos los archivos deben tener la misma cantidad de registros
+d - Todos los archivos deben tener diferente cantidad de registros
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+14 - Si se realiza la baja de un registro en un registro
+a - El archivo queda logicamente mas pequeñopero fisicamente no cambia
+b - El archivo queda logicamente igual pero fisicamente no cambia
+c - El archivo queda logicamente mas pequeño y fisicamente cambia
+d - El archivo queda logicamente igual y fisicamente no cambia
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+15 - Un arbol B+
+a - Es un archivo ordenado
+b - Es un indice ordenado
+c - Es un indice de un archivo de datos ordenado
+d - Es un indice de un archivo de datos desordenado
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+
+1g
+2g
+3f
+4h
+5d
+6a
+7a
+8d
+9b
+10c
+11c
+12g
+13g
+14g
+15g

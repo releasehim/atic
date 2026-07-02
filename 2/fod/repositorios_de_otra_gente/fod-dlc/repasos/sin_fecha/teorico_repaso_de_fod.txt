@@ -1,0 +1,148 @@
+Teorico Repaso de Fod
+
+1 - Un archivo directo
+a - Tiene acceso Directo y orden de busqueda lineal
+b - Tiene acceso Directo y orden de busqueda logaritmica
+c - Tiene acceso Directo y orden de busqueda exponencial
+d - Tiene acceso Secuencial indizado y orden de busqueda lineal
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores x -> "Archivo directo - acceso directo - orden constante"
+
+g
+
+2 - Un proceso de merge de n archivos, para que sea lo mas eficiente posible
+     en terminos de rendimiento/perfonmance
+a - Se debe aplicar con todos archivos ordenados por algun criterio
+b - Se debe aplicar con todos los archivos desordenados
+c - Se debe aplicar con algunos de los archivos ordenados por algun criterio y el resto desordenado
+d - Se debe aplicar con cada uno de los n archivos odenados por difenrentes criterios
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores x -> "Tienen que estar ordenados por el mismo criterio"
+
+g
+
+3 - Si se realiza la baja de un registro en un archivo directo
+a - Es igual de eficiente hacer una baja logica que una baja fisica
+b - Es mas eficiente hacer una baja logica que una baja fisica considerando el espacio ocupado
+c - Es menos eficiente hacer una baja logica que una baja fisica considerando el rendimiento/perfonmance
+d - Ninguna de las anteriores x
+
+d
+
+4 - Un archivo directo con registros de longitud variable
+a - Puede ocupar mas espacio que el mismo archivo con registros de longitud fija
+b - Puede ocupar el mismo espacio que el mismo archivo con registros de longitud fija
+c - Ocupa menos espacio que el mismo archivo con registros de longitud fija
+d - Ninguna de las anteriores x -> "Un archivo directo es para registros de longitud fija"
+
+d
+
+5 - Para poder realizar un algoritmo de bajas sobre un archivo
+a - Es suficiente que el archivo este ordenado por al menos un criterio
+b - Es necesario que el archivo este ordenado por al menos un criterio
+c - Es suficiente que el archivo este ordenado por al menos dos criterios
+d - Es necesario que el archivo este ordenado por al menos dos criterios
+e - Todas las anteriores son validas
+f  - Algunas de las anteriores son validas x
+g - Ninguna de las respuestas anteriores
+
+f
+
+6 - Una clave
+a - Identifica univocamente un elemente del archivo -> Tiene que ser primaria
+b - Identifica varios elementos de un archivo
+c - Esta constituida por al menos dos atributos del archivo donde esta definida
+d - Todas las anteriores
+e - Algunas de las anteriores
+f  - Ninguna de las anteriores x
+
+f
+
+7 - Un indice secundario implementado con un arbol binario
+a - Puede desbalancearse
+b - Puede estar balanceado
+c - Puede balancearse
+d - Se desbalancea facilmente
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores x -> "un indice no puede desbalancearse"
+
+g
+
+8 - Un arbol
+a - Puede desbalancearse
+b - Puede estar balanceado
+c - Esta balanceao en altura
+d - Puede no estar balanceado
+e - Todas las anteriores
+f  - Algunas de las anteriores x
+g - Ninguna de las anteriores
+
+f
+
+9 - Dado un indice de un archivo con registros de longitud variable
+a - Sus registros pueden ser de longitud variable
+b - Sus registros deben ser de longitud variable
+c - Sus registros pueden ser de longitud fija
+d - Sus registros son de longitud fija x -> "Los indices se imlementan siempre con registros de longitud fija"
+
+d
+
+10 - Un arbol
+a - Puede ser arbol binario y AVL x -> "Un arbol puede ser AVL"
+b - Puede ser B* y B+
+c - Puede ser B y B+
+d - Todas las anteriores son validas
+e - Algunas de las anteriores son validas
+f  - Ninguna de las respuestas anteriores vale
+
+a
+
+11 - La saturacion progresiva encadenada
+a - Se usa en caso de colision
+b - Se usa en caso de colision y saturacion x
+c - Se usa en caso de saturacion
+d - Se puede usar en caso de saturacion
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores
+
+b
+
+12 - Una funcion hash uniforme y aleatoria
+a - Tiene un promedio 1, de acceso de registros x -> "Uniforme y aleatoria asegura 1 acceso a registro"
+b - Tiene un promedio entre 1 y 2, de acceso a registros
+c - Tiene un promedio menor a 1, de acceso a registros
+d - Ninguna de las anteriores
+
+a
+
+13 - La densidad de empaquetamiento
+a - Se modifica con cada alta o baja, utilizando hashing extensible
+b - Se modifica con cada alta, utilizando hashing extensible
+c - Se modifica con cada baja, utilizando hashing extensible
+d - No se modifica con altas o bajas, utilizando hashing extensible
+e - Todas las anteriores
+f  - Algunas de las anteriores
+g - Ninguna de las anteriores x -> "Densidad de empaquetamiento es solo para hashing estatico"
+
+g
+
+14 - Cuando se produce una insercion en hash estatico, sobre el archivo de datos
+a - Se realiza una operacion de escritura y una de lectura
+b - Se realiza al menos una operacion de lectura y al menos una de escritura x
+c - Se realiza una operacion de lectura y al menos una de escritura
+d - Se realiza una operacion de escritura y al menos una de lectura
+
+b
+
+15 - Si hubo colision con hashing dinamico
+a - Ocurre overflow
+b - No ocurre oveflow
+c - Se trata con un algoritmo especifico de tratamiento de colisiones
+d - Algunas de las anteriores
+e - Ninguna de las anteriores x
+
+e

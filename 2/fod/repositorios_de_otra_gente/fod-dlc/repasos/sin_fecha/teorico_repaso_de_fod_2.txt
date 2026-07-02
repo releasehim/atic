@@ -1,0 +1,155 @@
+Teorico Repaso de Fod 2
+
+1 - Un archivo serie
+a - Tiene acceso secuencial y orden de busqueda lineal x -> "Los registros se almacenan continuos y sin indice"
+b - Tiene acceso secuencial indizado y orden de busqueda logaritmico
+c - Tiene acceso secuancial y orden de busqueda constante
+d - Tiene acceso secuencial y indizado y orden de busqueda lineal
+e - Todas las anteriores
+f -  Algunas de las anteriores
+g - Ninguna de las anteriores
+
+a
+
+2 - Un proceso de actualizacion de un archivo con n archivos
+a - Se puede aplicar con todos los archivos ordenados por algun criterio
+b - Se puede aplicar con todos los archivos desordenados
+c - Se puede aplicar con algunos de los achivos ordenados por algun criterio y el resto desordenado
+d - Se puede aplicar con cada uno de los n archivos ordenados por diferentes criterios
+e - Todas las anteriores son validas x
+f -  Algunas de las anteriores son validas
+g - Ninguna de las anteriores son validas
+
+e
+
+3 - Si se realiza la baja de un registro en un archivo secuencial indizado
+a - Es igual de eficiente hacer una baja logica que una fisica
+b - Es mas eficiente hacer una baja logica que una baja fisica
+c - Es menos eficiente hacer una baja logica que una baja fisica
+d - Ninguna de las anteriores x -> "No aclara eficiente en que"
+
+d
+
+4 - Un archivo con registros de longitud variable
+a - Ocupa mas espacio que el mismo archivo con registros de longitud fija
+b - Ocupa el mismo espacio que el mismo archivo con registros de longitud fija
+c - Ocupa menos espacio que el mismo archivo con registros de longitud fija
+d - No tengo datos suficientes para contestar x
+
+d
+
+5 - Para poder realizar un algoritmo de corte de control sobre un archivo
+a - Es suficiente que el archivo este ordenado por al menos un criterio
+b - Es necesario que el archivo este ordenado por al menos un criterio
+c - Es suficiente que el archivo este ordenado por al menos dos criterios
+d - Es necesario que el archivo este ordenado por al menos dos criterios
+e - Todas las anteriores son validas
+f  - Algunas de las anteriores son validas x -> "a y b"
+g - Ninguna de las  respuestas anteriores
+
+f
+
+6 - Una clave secundaria
+a - Identifica univocamente un elemento del archivo
+b - Identifica univocamente varios elementos de un archivo
+c - Esta constituida por al menos un atributo del archivo donde esta definida x
+d - Todas las anteriores son validas
+e - Algunas de las anteriores son validas
+f -  Ninguna de las respuestas anteriores vale
+
+c
+
+7 - Un indice
+a - Se implementa con un vector
+b - Se implementa con un arbol binario
+c - Se implementa con un arbol B
+d - Se implementa con un arbol B+
+e - Todas las anteriores son validas
+f  - Algunas de las anteriores son validas
+g - Ninguna de las respuestas anteriores vale x
+
+g
+
+8 - Un arbol binario paginado
+a - Puede desbalancearse
+b - Puede estar balanceado
+c - Puede no estar balanceado
+d - Todas las anteriores son validas
+e - Algunas de las anteriores son validas
+f  - Ninguna de las respuestas anteriores vale x
+
+f
+
+9 - Dado un indice de un archcivo. Para un momento determinado:
+a - Si se implemento con arbol B tiene mayor altura que si se implemento con arbol B+
+b - Si se implemento con un arbol B tiene igual altura que si se implemento con un arbol B+
+c - Si se implemento con un arbol B tiene menor altura que si se implemento con un arbol B+
+d - No tengo datos suficientes para responder x
+
+d
+
+10 - Un arbol multicamino
+a - Es un arbol binario
+b - Es un arbol AVL
+c - Es un arbol B+
+d - Todas las anteriores son validas
+e - Alguna de las anteriores son validas
+f  - Ninguna de las anteriores vale x
+
+f
+
+11 - El acceso directo a un elemento de datos es
+a - Mas eficiente que el acceso secuencial
+b - Mas eficiente que el acceso secuencial indizado
+c - Mas eficiente que utilizar un arbol B+
+d - Todas  las anteriores son validas x
+e - Algunas de las anteriores son validas
+f  - Niguna de las anteriores son validas
+
+d
+
+12 - Una funcion de hash en teoria debe ser
+a - Uniforme y aleatoria x
+b - Uniforme pero no aleatoria
+c - Aleatoria pero no uniforme
+d - No debe ser ni uniforme ni aleatoria
+
+a
+
+13 - La densidad de empaquetamiento
+a - Mide la realacion entre espacio disponible y espacio utilizado
+b - Mide la relacion entre la cantidad de registros que tiene un archivo y la capacidad de
+     almacenamiento disponible para el mismo
+c - Es el coheficiente entre el numero de registros del archivo y el espacio disponible
+d - Todas las anteriores x
+e - Algunas de las anteriores
+f  - Ninguna de las anteriores
+
+d
+
+14 - Cuando se produce una insercion de hash estatico sobre el archivo de datos
+a - Se realiza una operacion de escritura y una de lectura
+b - Se realiza al menos una opercacion de lectura y al menos una escritura x
+c - Se realiza una operacion de lectura y al menos una de escritura
+d - Se realiza una operacion de escritura y al menos  una de lectura
+
+b
+
+15 - En hashing extensible, cuando la Densidad de empaquetamiento tiende a 1
+a - Se debe pasar de hash estatico a dinamico
+b - Se debe reformular el tamaño del nodo
+c - Se deben aumentar la cantidad de registros por nodo
+d - Algunas de las anteriores
+e - Ninguna de las anteriores x -> "Cuando hay hashing dinamico, no hay DE"
+
+e
+
+16 - Cuando una clave "x" y otra clave "y" generan, por Funcion de dispersion, distinta direccion, entonces
+a - Puede ocurrir un desborde
+b - Puede ocurrir una colision
+c - "x" e "y" no son claves sinonimas x
+d - Todas las opciones anteriores son correctas
+e - Hay mas de una opcion valida
+f  - Ninguna de las opciones anteriores es correcta
+
+c

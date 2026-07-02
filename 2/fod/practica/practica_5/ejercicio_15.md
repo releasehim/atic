@@ -1,0 +1,48 @@
+# Ejercicio 15 - Hashing Extensible (Evaluación de Inserciones Múltiples)
+
+**Enunciado:** Identificar el estado correcto del archivo al intentar insertar las claves Python (01110011), Java (10100111) y PHP (01111111) partiendo desde un estado vacío. Capacidad de bloque = 2 claves.
+
+## Análisis Paso a Paso
+Extraemos los sufijos de las claves:
+- Python (`...011`): sufijo(1)=`1`, sufijo(2)=`11`, sufijo(3)=`011`.
+- Java (`...111`): sufijo(1)=`1`, sufijo(2)=`11`, sufijo(3)=`111`.
+- PHP (`...111`): sufijo(1)=`1`, sufijo(2)=`11`, sufijo(3)=`111`.
+
+**1. Estado inicial:**
+- `p = 0`, B0 (`p' = 0`) vacío.
+
+**2. Inserción de Python y Java:**
+- Ambas van a B0. B0 queda lleno `[Python, Java]`.
+
+**3. Inserción de PHP:**
+- OVERFLOW en B0.
+- `p' = p = 0`. Duplicamos directorio (`p` pasa a 1).
+- Python (1), Java (1), PHP (1). ¡Todas terminan en 1!
+- B0 (ahora con `p' = 1`) sigue almacenando a los 3. El desborde persiste.
+- Duplicamos directorio (`p` pasa a 2).
+- Python (11), Java (11), PHP (11). ¡Todas terminan en 11!
+- Bx (ahora con `p' = 2`) sigue almacenando a los 3. El desborde persiste.
+- Duplicamos directorio (`p` pasa a 3).
+- Python (011), Java (111), PHP (111).
+- Ahora sí hay diferencia. Dividimos el bloque:
+  - Python va a un nuevo bloque (ej. B2) que engloba las claves terminadas en `011`. Este bloque tendrá `p' = 3`.
+  - Java y PHP van a otro bloque (ej. B3) que engloba las claves terminadas en `111`. Este bloque tendrá `p' = 3`.
+
+**Estructura esperada:**
+- La tabla debe tener `Bits: 3` (8 entradas).
+- Debe existir un bloque B2 (`Bits: 3`) con Python. Solo la entrada `011` le apunta.
+- Debe existir un bloque B3 (`Bits: 3`) con Java y PHP. Solo la entrada `111` le apunta.
+- El resto de las combinaciones (`000, 010, 100, 110` terminadas en `0`) apuntan a un bloque vacío B0 (`Bits: 1`).
+- Las combinaciones `001, 101` (terminadas en `01`) apuntan a un bloque vacío B1 (`Bits: 2`).
+
+## Evaluación de las Opciones
+- **Opción A y B:** Inválidas porque Python, Java y PHP no se diferencian con 2 bits (todas terminan en `11`). Requieren obligatoriamente al menos 3 bits (`011` vs `111`) para poder ser alojadas en distintos bloques y resolver el desborde (ya que la capacidad es de 2).
+- **Opción D:** Tiene `Bits: 3`, pero el directorio está mal estructurado. La entrada `011` apunta al bloque 1 (`p' = 3` con Python), lo cual es coherente. Sin embargo, asigna las entradas `000, 001, 010, 100, 101, 110` al mismo bloque 0 (`Bits: 1`), lo cual es erróneo (un bloque con `Bits: 1` solo puede recibir sufijos donde su bit relevante coincida, en este caso los terminados en `0`). En la opción D, apuntan a B0 entradas que terminan en `1` (como `001, 101`).
+- **Opción C:**
+  - `Bits: 3` (8 entradas).
+  - Entradas terminadas en `0` (`000, 010, 100, 110`) -> Bloque 0 (`Bits = 1`, vacío). ¡Correcto!
+  - Entradas terminadas en `01` (`001, 101`) -> Bloque 1 (`Bits = 2`, vacío). ¡Correcto!
+  - Entrada `011` -> Bloque 2 (`Bits = 3`) con `Python`. ¡Correcto!
+  - Entrada `111` -> Bloque 3 (`Bits = 3`) con `Java` y `PHP`. ¡Correcto!
+
+**Respuesta Correcta:** **Opción C**.
