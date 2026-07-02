@@ -80,7 +80,7 @@
   ============================================================ }
 
 const
-    M = 43; { Orden del árbol B+ (mismo cálculo que ejercicio 2, índice separado) }
+    M = 42; { Orden del árbol B+ (M=42 considerando el campo sig) }
 
 type
     { Registro completo del alumno - va al archivo de datos }
@@ -128,7 +128,7 @@ var
   1. Comenzar en la raíz.
   2. Recorrer los nodos INTERNOS comparando la clave buscada
      con los separadores del nodo:
-     - Si clave < separador[i] → ir a hijos[i-1].
+     - Si clave < separador[i] → ir a hijos[i].
      - Si clave >= separador[i] → continuar comparando hacia la derecha.
   3. Continuar bajando hasta llegar a un NODO HOJA.
      (Condición: hijos[0] = -1, o campo esHoja = true)

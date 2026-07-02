@@ -41,14 +41,14 @@ begin
       
       cant_total := cant_total + 1;
       suma_total := suma_total + num;
-      if (num < 1500) then
+      if (num < 15000) then
         cant_menores := cant_menores + 1;
     end;
     
     close(archivo);
     
     writeln('----------------------------------------');
-    writeln('Cantidad de numeros menores a 1500: ', cant_menores);
+    writeln('Cantidad de numeros menores a 15000: ', cant_menores);
     if (cant_total > 0) then
     begin
       promedio := suma_total / cant_total;

@@ -134,9 +134,9 @@ var
         Usar enlaces[i] como NRR en archivoDatos.
         Leer el registro del alumno de archivoDatos en esa posición.
         Fin de búsqueda.
-     c. Si 12345678 < claves[1] → seguir por hijos[0] (subárbol izquierdo).
-     d. Si claves[i] < 12345678 < claves[i+1] → seguir por hijos[i].
-     e. Si 12345678 > claves[cant_claves] → seguir por hijos[cant_claves].
+     c. Si 12345678 < claves[1] → seguir por hijos[1] (subárbol izquierdo).
+     d. Si claves[i] < 12345678 < claves[i+1] → seguir por hijos[i+1].
+     e. Si 12345678 > claves[cant_claves] → seguir por hijos[cant_claves+1].
 
   3. Leer el nodo hijo indicado y repetir desde el paso 2.
 

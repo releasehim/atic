@@ -136,6 +136,47 @@ begin
         end;
     close(arc);
 end;
+
+procedure compactarArchivoTruncarUnaVez(var arc: archivo);
+var
+    a, last: aves;
+    pos, cantBorrados: integer;
+begin
+    reset(arc);
+    cantBorrados := 0;
+    leer(arc, a);
+    while(a.codigo <> valoralto) and (filepos(arc) <= (filesize(arc) - cantBorrados)) do
+        begin
+            if(a.codigo < 0) then
+                begin
+                    pos := filepos(arc) - 1;
+                    cantBorrados := cantBorrados + 1;
+                    
+                    seek(arc, filesize(arc) - cantBorrados);
+                    read(arc, last);
+                    
+                    while (last.codigo < 0) and (pos < (filesize(arc) - cantBorrados)) do begin
+                        cantBorrados := cantBorrados + 1;
+                        seek(arc, filesize(arc) - cantBorrados);
+                        read(arc, last);
+                    end;
+                    
+                    if pos < (filesize(arc) - cantBorrados + 1) then begin
+                        seek(arc, pos);
+                        write(arc, last);
+                        seek(arc, pos); // retrocedo para seguir iterando por si necesito chequear
+                    end;
+                end;
+            leer(arc, a);
+        end;
+    
+    if cantBorrados > 0 then begin
+        seek(arc, filesize(arc) - cantBorrados);
+        truncate(arc);
+    end;
+    close(arc);
+end;
+
 var
     arc: archivo;
 begin

@@ -1,4 +1,4 @@
-                         ​ Introducción a las Bases de Datos
+﻿                         ​ Introducción a las Bases de Datos
 
                   ​ Fundamentos de Organización de Datos
 
@@ -42,7 +42,7 @@
 
 
                                                                                                                   1
-    ●​ Cada registro del archivo maestro puede ser actualizado por cero, uno o más registros del archivo
+    ●​ Cada registro del archivo maestro puede ser actualizado por cero, uno o más registros del archivo
        detalle.
     ●​ El archivo detalle sólo contiene registros cuyos códigos existen en el archivo maestro.
 
@@ -87,7 +87,7 @@
 
 
                                                                                                               2
-5.​ Suponga que trabaja en una oficina donde se encuentra instalada una red local (LAN). La misma está
+5.​ Suponga que trabaja en una oficina donde se encuentra instalada una red local (LAN). La misma está
     conformada por 5 máquinas conectadas entre sí y a un servidor central.
 
  Semanalmente, cada máquina genera un archivo detalle de logs que registra las sesiones abiertas por los
@@ -133,7 +133,7 @@
 
 
                                                                                                                3
- Además, informar la cantidad de localidades que poseen más de 50 casos activos, independientemente de
+ Además, informar la cantidad de localidades que poseen más de 50 casos activos, independientemente de
  que hayan sido actualizadas o no.
 
 7.​ Se dispone de un archivo maestro con información de los alumnos de la Facultad de Informática. Cada
@@ -181,7 +181,7 @@
     de la Argentina.
 
                                                                                                                 4
- Para ello, se dispone de un archivo maestro que contiene la siguiente información: código de provincia,
+ Para ello, se dispone de un archivo maestro que contiene la siguiente información: código de provincia,
  nombre de la provincia, cantidad de habitantes y cantidad total histórica de kilos de yerba consumidos.
 
  Mensualmente, se reciben 16 archivos detalle con información relevada sobre el consumo de yerba mate
@@ -235,7 +235,7 @@
 
 
                                                                                                             5
-            Total de Votos Provincia: ____
+            Total de Votos Provincia: ____
 
             Código de Provincia
 
@@ -291,7 +291,7 @@
 
 
                                                                                                            6
-12.​ La empresa de software ‘X’ posee un servidor web donde se encuentra alojado el sitio web de la
+12.​ La empresa de software ‘X’ posee un servidor web donde se encuentra alojado el sitio web de la
      organización. En dicho servidor, se almacenan en un archivo todos los accesos que se realizan al sitio.
      La información que se almacena en el archivo es la siguiente: año, mes, día, idUsuario y tiempo de
      acceso al sitio de la organización. El archivo se encuentra ordenado por los siguientes criterios: año,
@@ -342,7 +342,7 @@
 
 
                                                                                                           7
-13.​ Suponga que usted es administrador de un servidor de correo electrónico. En los logs del mismo
+13.​ Suponga que usted es administrador de un servidor de correo electrónico. En los logs del mismo
      (información guardada acerca de los movimientos que ocurren en el server) que se encuentra en la
      siguiente ruta: /var/log/logmail.dat se guarda la siguiente información: nro_usuario, nombreUsuario,
      nombre, apellido, cantidadMailEnviados. Diariamente el servidor de correo genera un archivo con la
@@ -390,7 +390,7 @@
      continuación: Código pcia, nombre provincia, código de localidad, nombre de localidad, #viviendas sin
      luz, #viviendas sin gas, #viviendas de chapa, #viviendas sin agua, # viviendas sin sanitarios.
                                                                                                               8
-    Mensualmente reciben detalles de las diferentes provincias indicando avances en las obras de ayuda en
+    Mensualmente reciben detalles de las diferentes provincias indicando avances en las obras de ayuda en
     la edificación y equipamientos de viviendas en cada provincia. La información de los detalles es la
     siguiente: Código pcia, código localidad, #viviendas con luz, #viviendas construidas, #viviendas con
     agua, #viviendas con gas, #entrega sanitarios.
@@ -439,7 +439,7 @@
 18.​ Se cuenta con un archivo con información de los casos de COVID-19 registrados en los diferentes hospitales
      de la Provincia de Buenos Aires cada día. Dicho archivo contiene: código de localidad, nombre de localidad,
                                                                                                                9
-    código de municipio, nombre de municipio, código de hospital, nombre de hospital, fecha y cantidad de casos
+    código de municipio, nombre de municipio, código de hospital, nombre de hospital, fecha y cantidad de casos
     positivos detectados. El archivo está ordenado por localidad, luego por municipio y luego por hospital.
 
     Escriba la definición de las estructuras de datos necesarias y un procedimiento que haga un listado con el
@@ -491,7 +491,7 @@
 
 
                                                                                                                 10
-  Los archivos detalles con nacimientos, contendrán la siguiente información: nro partida nacimiento,
+  Los archivos detalles con nacimientos, contendrán la siguiente información: nro partida nacimiento,
   nombre, apellido, dirección detallada (calle, nro, piso, depto, ciudad), matrícula del médico, nombre y
   apellido de la madre, DNI madre, nombre y apellido del padre, DNI del padre.
   En cambio, los 50 archivos de fallecimientos tendrán: nro partida nacimiento, DNI, nombre y apellido del
@@ -517,4 +517,4 @@ puede descargarse desde la plataforma moodle.
 
 
                                                                                                        11
-
+

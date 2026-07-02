@@ -107,29 +107,19 @@ end;
 function claveEncontrada(unNodo: nodo; clave: longint; var pos: integer): boolean;
 var
     i: integer;
-    encontrado: boolean;
 begin
     i := 1;
-    encontrado := false;
-    { Búsqueda lineal en el array de datos del nodo }
-    while (i <= unNodo.cant_claves) and (not encontrado) do begin
-        if unNodo.datos[i].dni = clave then
-            encontrado := true
-        else if clave < unNodo.datos[i].dni then begin
-            { La clave buscada es menor que datos[i]: bajar por hijo i-1 }
-            pos := i - 1;
-            claveEncontrada := false;
-            exit;
-        end else
-            i := i + 1;
+    { Búsqueda de la clave en el array }
+    while (i <= unNodo.cant_claves) and (clave > unNodo.datos[i].dni) do begin
+        i := i + 1;
     end;
 
-    if encontrado then begin
+    if (i <= unNodo.cant_claves) and (unNodo.datos[i].dni = clave) then begin
         pos := i;
         claveEncontrada := true;
     end else begin
-        { La clave es mayor que todas: bajar por el último hijo }
-        pos := unNodo.cant_claves;
+        { Si clave < datos[i], baja por hijo i. Si recorrió todos, i = cant_claves + 1, baja por el último hijo }
+        pos := i;
         claveEncontrada := false;
     end;
 end;

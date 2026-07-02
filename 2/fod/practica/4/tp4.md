@@ -1,8 +1,11 @@
+<!-- markdownlint-disable MD013 MD040 -->
 # Introducción a las Bases de Datos
-## Fundamentos de Organización de Datos
-# Práctica 4
 
-## Políticas para la resolución de underflow:
+## Fundamentos de Organización de Datos
+
+## Práctica 4
+
+## Políticas para la resolución de underflow
 
 **Política izquierda:** se intenta redistribuir con el hermano adyacente izquierdo, si no es posible, se fusiona con hermano adyacente izquierdo.
 
@@ -14,7 +17,7 @@
 
 **Casos especiales:** en cualquier política si se tratase de un nodo hoja de un extremo del árbol debe intentarse redistribuir con el hermano adyacente que el mismo posea.
 
-### Aclaración:
+### Aclaración
 
 - En caso de underflow lo primero que se intenta SIEMPRE es redistribuir y el hermano adyacente se encuentra en condiciones de ceder elementos si al hacerlo no se produce underflow en él.
 - En caso de overflow SIEMPRE se genera un nuevo nodo. Las claves se distribuyen equitativamente entre el nodo desbordado y el nuevo.
@@ -48,7 +51,7 @@ graph TD
 
 En el caso de órdenes pares se elige la menor de las claves mayores o su copia (en árbol B+) para promocionar.
 
-### Ejemplo árbol B, orden 4:
+### Ejemplo árbol B, orden 4
 
 ```mermaid
 graph TD
@@ -59,7 +62,7 @@ graph TD
     N2 --> N1
 ```
 
-### Ejemplo árbol B+, orden 4:
+### Ejemplo árbol B+, orden 4
 
 ```mermaid
 graph TD
@@ -79,7 +82,7 @@ graph TD
 
 a. Defina en Pascal las estructuras de datos necesarias para organizar el archivo de alumnos como un árbol B de orden M.
 
-b. Suponga que la estructura de datos que representa una persona (registro de persona) ocupa 64 bytes, que cada nodo del árbol B tiene un tamaño de 512 bytes y que los números enteros ocupan 4 bytes, ¿cuántos registros de persona entrarían en un nodo del árbol B? ¿Cuál sería el orden del árbol B en este caso (el valor de M)? Para resolver este inciso, puede utilizar la fórmula N = (M-1) * A + M * B + C, donde N es el tamaño del nodo (en bytes), A es el tamaño de un registro (en bytes), B es el tamaño de cada enlace a un hijo y C es el tamaño que ocupa el campo referido a la cantidad de claves. El objetivo es reemplazar estas variables con los valores dados y obtener el valor de M (M debe ser un número entero, ignorar la parte decimal).
+b. Suponga que la estructura de datos que representa una persona (registro de persona) ocupa 64 bytes, que cada nodo del árbol B tiene un tamaño de 512 bytes y que los números enteros ocupan 4 bytes, ¿cuántos registros de persona entrarían en un nodo del árbol B? ¿Cuál sería el orden del árbol B en este caso (el valor de M)? Para resolver este inciso, puede utilizar la fórmula N = (M-1) *A + M* B + C, donde N es el tamaño del nodo (en bytes), A es el tamaño de un registro (en bytes), B es el tamaño de cada enlace a un hijo y C es el tamaño que ocupa el campo referido a la cantidad de claves. El objetivo es reemplazar estas variables con los valores dados y obtener el valor de M (M debe ser un número entero, ignorar la parte decimal).
 
 c. ¿Qué impacto tiene sobre el valor de M organizar el archivo con toda la información de los alumnos como un árbol B?
 
@@ -162,7 +165,7 @@ En los dos últimos casos, ¿cuándo se aplica cada uno?
 **6.** Suponga que se tiene un archivo que contiene información de los empleados de una empresa. De cada empleado se mantiene la siguiente información: DNI, legajo, nombre completo y salario. Considere que se mantiene además un índice, organizado como árbol B de orden 4, que provee acceso indizado a los empleados por su DNI. Grafique como queda el archivo de empleados (archivo de datos) y el archivo índice (árbol B) tras la inserción de los siguientes registros:
 
 | DNI | Legajo | Nombre y apellido | Salario |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 35.000.000 | 100 | Juan Perez | $250000 |
 | 40.000.000 | 101 | Lucio Redivo | $400000 |
 | 32.000.000 | 102 | Nicolás Lapro | $720000 |
@@ -409,6 +412,7 @@ D) La clave 25 se inserta en un nodo hoja sin cambios en la raíz.
 ```
 
 A)
+
 ```
 7: 2 (65) 6
 2: 0 (30) 1 (51) 3
@@ -421,6 +425,7 @@ A)
 ```
 
 B)
+
 ```
 7: 2 (65) 6
 2: 0 (30) 1 (51) 3
@@ -433,6 +438,7 @@ B)
 ```
 
 C)
+
 ```
 7: 2 (65) 6
 2: 0 (30) 1 (51) 3
@@ -445,6 +451,7 @@ C)
 ```
 
 D)
+
 ```
 7: 2 (65) 6
 2: 0 (30) 1 (51) 3

@@ -139,8 +139,8 @@ var
   1. Leer la raíz del árbol (posición conocida, ej: NRR 0 o almacenada aparte).
   2. Dentro del nodo, buscar la clave (búsqueda lineal o binaria en el array).
      a. Si la clave coincide con datos[i].dni → ¡ENCONTRADO!
-     b. Si la clave es menor que datos[i].dni → ir al hijo hijos[i-1].
-     c. Si la clave es mayor que la última → ir al hijo hijos[cant_claves].
+     b. Si la clave es menor que datos[i].dni → ir al hijo hijos[i].
+     c. Si la clave es mayor que la última → ir al hijo hijos[cant_claves+1].
   3. Leer el nodo hijo indicado y repetir desde el paso 2.
   4. Si se llega a un hijo = -1 (nodo hoja sin ese hijo) → NO ENCONTRADO.
 

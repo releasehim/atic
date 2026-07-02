@@ -1,7 +1,7 @@
 # Introducción a las Bases de Datos
 ## Fundamentos de Organización de Datos
-# Práctica 5
-## Hashing (Dispersión)
+### Práctica 5
+#### Hashing (Dispersión)
 
 ---
 
@@ -52,11 +52,11 @@ Nota: (+) indica una operación de inserción, (-) indica una operación de baja
 | 3 | + | Entre Ríos | ....1110 |
 | 4 | + | Corrientes | ....0010 |
 | 5 | + | San Luis | ....0101 |
-| 6 | + | Tucumán | ….0111 |
-| 7 | + | Rio Negro | ….0011 |
-| 8 | + | Jujuy | ….1111 |
-| 9 | + | Salta | ….1010 |
-| 10 | - | Río Negro | …0011 |
+| 6 | + | Tucumán | ....0111 |
+| 7 | + | Rio Negro | ....0011 |
+| 8 | + | Jujuy | ....1111 |
+| 9 | + | Salta | ....1010 |
+| 10 | - | Río Negro | ....0011 |
 
 **9.** Para las siguientes claves, realice el proceso de dispersión mediante el método de hashing extensible, sabiendo que cada nodo tiene capacidad para dos registros. El número natural indica el orden de llegada de las operaciones. Se debe mostrar el estado del archivo para cada operación. Justifique brevemente ante colisión y desborde los pasos que realiza.
 
