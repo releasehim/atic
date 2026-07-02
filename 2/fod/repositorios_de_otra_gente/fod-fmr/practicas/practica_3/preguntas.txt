@@ -1,1 +1,0 @@
-Es de buena practica assignarles los nombres de los archivos a los datos.

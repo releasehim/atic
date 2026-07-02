@@ -1,0 +1,3 @@
+## 1. Concepto de hashing y relación con archivos
+El **hashing (o dispersión)** es una técnica de organización y direccionamiento directo de datos que utiliza una función (función hash) para mapear el valor de una clave (por ejemplo, DNI o ID) directamente a una dirección física o lógica dentro de un espacio de almacenamiento.
+En el contexto de los **archivos**, esta técnica se utiliza en la organización directa para acceder rápidamente a los registros almacenados en disco sin necesidad de realizar búsquedas secuenciales exhaustivas o depender de índices jerárquicos (como los árboles B), acercando el costo de acceso a O(1) lecturas de disco.
