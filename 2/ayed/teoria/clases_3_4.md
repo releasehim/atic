@@ -1,4 +1,4 @@
-# Clase 3 AyED
+# Clase 3: Árboles Binarios
 
 ## 1. Conceptos Fundamentales y Terminología
 
