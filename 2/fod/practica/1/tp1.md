@@ -2,7 +2,8 @@
 
 Creación, consulta y mantenimiento de archivos secuenciales - Algorítmica Básica.
 
-## Objetivos:
+## Objetivos
+
 * Comprender operaciones básicas sobre archivos binarios.
 * Crear, recorrer y actualizar archivos binarios combinando sus operaciones básicas.
 * Generar y utilizar archivos de texto para la carga y exportación de información.

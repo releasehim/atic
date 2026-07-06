@@ -99,7 +99,7 @@ flowchart TD
 Representación física del archivo (un registro por nodo del árbol):
 
 | NRR | cant_claves (cd) | datos (clave/nombre) | hijos |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 2 | 1: 25/María — 2: 40/Luis | 1: -1, 2: -1, 3: — |
 | 1 | 1 | 1: 96/Franco | 1: -1, 2: -1 |
 | 2 | 1 | 1: 67/Pedro | 1: 0, 2: 1 |
@@ -146,7 +146,7 @@ flowchart TD
 Archivo de datos (no ordenado):
 
 | NRR | Código | Nombre |
-|---|---|---|
+| --- | --- | --- |
 | 0 | 40 | Luis |
 | 1 | 96 | Franco |
 | 2 | 25 | Maria |
@@ -155,7 +155,7 @@ Archivo de datos (no ordenado):
 Archivo índice (árbol B):
 
 | NRR | cant_claves (cc) | claves | enlaces | hijos |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 0 | 2 | 1: 25, 2: 40 | 1: 2, 2: 0 | 1: -1, 2: -1, 3: — |
 | 1 | 1 | 1: 96 | 1: 4 | 1: -1, 2: -1 |
 | 2 | 1 | 1: 67 | 1: 3 | 1: 0, 2: 1 |
@@ -218,7 +218,7 @@ flowchart TD
 Archivo resultante:
 
 | NRR | cant_claves (cc) | claves | hijos |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 2 | 25, 40 | -1, -1, -1 |
 | 1 | 1 | 96 | -1, -1 |
 | 2 | 1 | 67 | 0, 1 |

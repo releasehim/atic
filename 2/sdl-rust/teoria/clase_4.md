@@ -1,6 +1,7 @@
 # Clase 4: Collections (Parte 2) y Generics
 
 ## Temario
+
 - **Collections (Segunda Parte):**
   - Sets: `HashSet`, `BTreeSet`
   - Extra: `BinaryHeap`
@@ -12,6 +13,7 @@
 ## Set: HashSet
 
 ### ¿Qué son?
+
 Es un `HashMap` con la diferencia fundamental de que **no tiene valores** asociados; solo almacena claves únicas.
 
 ```rust
@@ -38,6 +40,7 @@ fn main() {
     println!("¿Está vacío?: {}", ids.is_empty());
 }
 ```
+
 > *Más información: [https://doc.rust-lang.org/std/collections/hash_set/struct.HashSet.html](https://doc.rust-lang.org/std/collections/hash_set/struct.HashSet.html)*
 
 ---
@@ -45,6 +48,7 @@ fn main() {
 ## Set: BTreeSet
 
 ### ¿Qué son?
+
 Es un conjunto **ordenado** basado en Árboles Binarios (B-Tree). Almacena sus elementos en orden ascendente.
 
 ```rust
@@ -59,6 +63,7 @@ fn main() {
     // Tiene las mismas operaciones que HashSet (diferencia, intersección, unión, etc.)
 }
 ```
+
 > *Más información: [https://doc.rust-lang.org/std/collections/struct.BTreeSet.html](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)*
 
 ---
@@ -66,6 +71,7 @@ fn main() {
 ## Extra: BinaryHeap
 
 ### ¿Qué es?
+
 Es una cola de prioridad implementada como un montículo binario (*binary heap*). Por defecto funciona como un **max-heap** (el elemento más grande tiene la prioridad más alta).
 
 ```rust
@@ -91,6 +97,7 @@ fn main() {
 ```
 
 ### BinaryHeap: ¿Y el min-heap?
+
 Para utilizar un **min-heap** (donde el elemento más pequeño tiene la prioridad más alta), se puede envolver el valor con el tipo `Reverse`.
 
 ```rust
@@ -116,6 +123,7 @@ fn main() {
     println!("min heap: {:?}", min_heap);
 }
 ```
+
 > *Más información: [https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html](https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html)*
 
 ---
@@ -123,6 +131,7 @@ fn main() {
 ## ¿Cuándo usar cada estructura?
 
 ### ¿Cuándo usar `Vec`?
+
 - Quiero recopilar elementos para procesarlos o enviarlos a otro lugar más adelante, y no me importan las propiedades de los valores reales que se almacenan.
 - Quiero una secuencia de elementos en un orden particular, y solo se agrega al final (o cerca de él).
 - Quiero el comportamiento de una pila (*stack*).
@@ -130,27 +139,33 @@ fn main() {
 - Quiero un arreglo con manejo en memoria *heap*.
 
 ### ¿Cuándo usar `VecDeque`?
+
 - Quiero un `Vec` que admita una inserción eficiente en ambos extremos.
 - Quiero manejar la estructura de una cola (*queue*).
 - Quiero una cola de dos extremos (*deque*).
 
 ### ¿Cuándo usar `LinkedList`?
+
 - Quiero dividir y agregar listas de manera eficiente.
 - Estás absolutamente seguro de que realmente querés una lista doblemente enlazada.
 
 ### ¿Cuándo usar `HashMap`?
+
 - Deseas asociar claves arbitrarias con un valor arbitrario.
 - Querés un caché.
 - Querés un *map*, sin funcionalidad adicional.
 
 ### ¿Cuándo usar `BTreeMap`?
+
 - Quiero un *map* ordenado por sus claves.
 - Me interesa saber cuál es el par clave-valor más pequeño o más grande.
 
 ### ¿Cuándo usar *Set* (`HashSet` / `BTreeSet`)?
+
 - Solo querés un conjunto con sus propiedades de membresía y operaciones de teoría de conjuntos (intersección, unión, diferencia).
 
 ### ¿Cuándo usar `BinaryHeap`?
+
 - Deseas almacenar un montón de elementos, pero solo querés procesar el "más grande" o "más importante" en un momento dado.
 - Querés una cola de prioridad.
 
@@ -159,6 +174,7 @@ fn main() {
 ## Performance (Rendimiento)
 
 ### Secuencias
+
 *Nota: Donde ocurren empates, `Vec` suele ser más rápido que `VecDeque`, y `VecDeque` suele ser más rápido que `LinkedList`.*
 
 | Operación       | `Vec`                | `VecDeque`           | `LinkedList`        |
@@ -170,6 +186,7 @@ fn main() {
 | `split_off(i)`  | O(n-i)               | O(min(i, n-i))       | O(min(i, n-i))       |
 
 ### Maps & Sets
+
 *Para los Sets, todas las operaciones tienen el costo de la operación equivalente en un Map.*
 
 | Operación       | `HashMap`            | `BTreeMap`           |
@@ -185,11 +202,13 @@ fn main() {
 ## Generics
 
 ### ¿Para qué sirven?
+
 El tipo *generic* (genérico) se utiliza para generalizar implementaciones, permitiendo mayor flexibilidad en el código al poder trabajar con múltiples tipos sin tener que reescribir la lógica.
 
 ### Ejemplo I: `struct Punto<T>`
 
 **Problema inicial (sin genéricos):**
+
 ```rust
 #[derive(Debug)]
 struct Punto {
@@ -205,6 +224,7 @@ fn main() {
 ```
 
 **Solución con un parámetro genérico `<T>`:**
+
 ```rust
 struct Punto<T> {
     x: T,
@@ -219,6 +239,7 @@ fn main() {
 ```
 
 **Solución con dos parámetros genéricos `<T, V>` (correcta):**
+
 ```rust
 #[derive(Debug)]
 struct Punto<T, V> {
@@ -235,6 +256,7 @@ fn main() {
 ```
 
 **Advertencia (Genéricos anidados):**
+
 ```rust
 #[derive(Debug)]
 struct Punto<T> {
@@ -250,6 +272,7 @@ fn main() {
     println!("{:?}", p_esp);
 }
 ```
+
 > *Nota: En el ejemplo anterior, `Punto<T>` debe implementar `Copy` o `Clone` para que `p1` y `p2` puedan moverse dentro de `p_esp`, o bien pasarse por referencia, dependiendo de la semántica de movimiento.*
 
 ### Ejemplo II: Caja Genérica `<T>`
@@ -284,6 +307,7 @@ fn main() {
 ```
 
 **Error al intentar usarlo con otro tipo:**
+
 ```rust
 fn main() {
     let mut listado_de_compras = Vec::new();
@@ -295,6 +319,7 @@ fn main() {
 ```
 
 **Solución final con Genéricos `<T>`:**
+
 ```rust
 struct Caja<T> {
     dato: T,

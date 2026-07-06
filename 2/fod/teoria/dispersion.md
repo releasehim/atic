@@ -114,10 +114,12 @@ El hashing extensible pertenece al direccionamiento **dinámico**: a diferencia 
 ### Estado inicial del archivo
 
 #### Tabla de dispersión
+
 - **Bits de dispersión:** 0
 - **Sufijo:** (0) → **#Bloque:** 0
 
 #### Archivo de datos
+
 - **#Bloque 0** | **Bits:** 0 | **Clave R1:** [vacío] | **Clave R2:** [vacío]
 
 ### Se agregan Colapinto y Verstappen
@@ -125,6 +127,7 @@ El hashing extensible pertenece al direccionamiento **dinámico**: a diferencia 
 Ambos se agregan sin inconvenientes en el bloque 0.
 
 #### Archivo de datos
+
 - **#Bloque 0** | **Bits:** 0 | **Clave R1:** Colapinto (1011001100) | **Clave R2:** Verstappen (1110101000)
 
 ### Se agrega Russell → produce desborde
@@ -144,11 +147,13 @@ El procedimiento general ante un desborde es siempre el mismo:
 En el caso de Russell: el bloque 0 tenía 0 bits locales, ahora pasa a tener 1. Se crea el bloque 1, también con 1 bit local. Como 1 (local) es mayor que 0 (global), se aumenta el valor global de la tabla a 1 y se duplican las direcciones. La dirección que desbordó pasa a apuntar al bloque nuevo (bloque 1); la dirección recién creada por la duplicación pasa a apuntar al bloque original (bloque 0). Las claves se redistribuyen mirando el último bit de cada una: Colapinto y Verstappen terminan en 0, por lo que van al bloque 1; Russell termina en 1, por lo que va al bloque 0.
 
 #### Tabla de dispersión
+
 - **Bits de dispersión:** 1
 - **Sufijo (0):** #Bloque 1
 - **Sufijo (1):** #Bloque 0
 
 #### Archivo de datos
+
 - **#Bloque 0** | **Bits:** 1 | **Clave R1:** Russell (1010001001) | **Clave R2:** [vacío]
 - **#Bloque 1** | **Bits:** 1 | **Clave R1:** Colapinto (1011001100) | **Clave R2:** Verstappen (1110101000)
 
@@ -159,6 +164,7 @@ Se produce desborde en el bloque 1. Se aumentan en uno los bits de dispersión l
 Es importante notar que **el bloque que no participó del desborde (el bloque 0, con Russell) queda exactamente igual que antes**: a lo sumo va a quedar referenciado por más direcciones si se duplicó la tabla, pero su contenido no se toca. Esta es la misma regla que rige en árboles B cuando se resuelve un overflow: los nodos que no están involucrados en el problema deben permanecer idénticos entre un paso y el siguiente. Si alguna cubeta que no tuvo desborde queda distinta al estado anterior, es señal de que algo se hizo mal.
 
 #### Tabla de dispersión
+
 - **Bits de dispersión:** 2
 - **Sufijos:**
   - (00): #Bloque 2
@@ -167,6 +173,7 @@ Es importante notar que **el bloque que no participó del desborde (el bloque 0,
   - (11): #Bloque 0
 
 #### Archivo de datos
+
 - **#Bloque 0** | **Bits:** 1 | **Clave R1:** Russell (1010001001) | **Clave R2:** [vacío]
 - **#Bloque 1** | **Bits:** 2 | **Clave R1:** Stroll (1010101010) | **Clave R2:** [vacío]
 - **#Bloque 2** | **Bits:** 2 | **Clave R1:** Colapinto (1011001100) | **Clave R2:** Verstappen (1110101000)
@@ -176,6 +183,7 @@ Es importante notar que **el bloque que no participó del desborde (el bloque 0,
 Repitiendo el mismo procedimiento para cada desborde:
 
 #### Tabla de dispersión
+
 - **Bits de dispersión:** 3
 - **Sufijos:**
   - (000): #Bloque 3
@@ -188,6 +196,7 @@ Repitiendo el mismo procedimiento para cada desborde:
   - (111): #Bloque 5
 
 #### Archivo de datos
+
 - **#Bloque 0** | **Bits:** 2 | **Clave R1:** Russell (1010001001) | **Clave R2:** [vacío]
 - **#Bloque 1** | **Bits:** 2 | **Clave R1:** Stroll (1010101010) | **Clave R2:** [vacío]
 - **#Bloque 2** | **Bits:** 3 | **Clave R1:** Colapinto (1011001100) | **Clave R2:** [vacío]
@@ -216,6 +225,7 @@ Si al eliminar una clave queda otra clave en esa misma dirección, se da de baja
 ### Doy de baja a Verstappen: se borra normal
 
 #### Archivo de datos (Bloque 3 modificado)
+
 - **#Bloque 3** | **Bits:** 3 | **Clave R1:** Alonso (1010001000) | ~~**Clave R2:** Verstappen (1110101000)~~ [vacío]
 
 ### Caso con bloque que queda vacío: ¿se puede liberar?
@@ -234,6 +244,7 @@ Una observación útil: cuando el bloque que queda vacío tiene la **máxima** c
 El bloque 3 tenía 3 bits de dispersión local (el máximo, igual al global). Su sufijo es 000; reduciendo en uno la cantidad de bits a considerar (es decir, mirando solo "00"), se identifica como posible hermano al bloque cuyo sufijo es 100 (el bloque 2), descartando la propia entrada que señalaba al bloque 3. Como esa única entrada hermana apunta al bloque 2, **se puede liberar** el bloque 3: se libera, se actualiza la entrada correspondiente de la tabla para que apunte al bloque 2, y se reduce en uno la cantidad de bits de dispersión local del bloque 2.
 
 #### Tabla de dispersión
+
 - **Bits de dispersión:** 3
 - **Sufijos:**
   - (000): #Bloque **2** (modificado)
@@ -246,6 +257,7 @@ El bloque 3 tenía 3 bits de dispersión local (el máximo, igual al global). Su
   - (111): #Bloque 5
 
 #### Archivo de datos
+
 - **#Bloque 2** | **Bits:** **2** (modificado) | **Clave R1:** Colapinto (1011001100) | **Clave R2:** [vacío]
 - **#Bloque 3** | ~~**Bits:** 3~~ [Liberado]
 
@@ -254,6 +266,7 @@ El bloque 3 tenía 3 bits de dispersión local (el máximo, igual al global). Su
 El bloque 1 tenía 2 bits de dispersión local y estaba referenciado por las direcciones terminadas en 10. Para evaluar si se puede liberar, se reduce en uno la cantidad de bits a considerar (mirando solo el último bit, "0") y se identifican las entradas hermanas, descartando las que apuntan al bloque 1: las entradas terminadas en 00 apuntan todas al mismo bloque (el 2), por lo tanto **se puede liberar** el bloque 1. Se actualizan las referencias que apuntaban a él para que apunten al bloque 2, y se reduce en uno la cantidad de bits de dispersión local de ese bloque.
 
 #### Tabla de dispersión
+
 - **Bits de dispersión:** 3
 - **Sufijos:**
   - (000): #Bloque 2
@@ -266,6 +279,7 @@ El bloque 1 tenía 2 bits de dispersión local y estaba referenciado por las dir
   - (111): #Bloque 5
 
 #### Archivo de datos
+
 - **#Bloque 1** | ~~**Bits:** 2~~ [Liberado]
 - **#Bloque 2** | **Bits:** **1** (modificado) | **Clave R1:** Colapinto (1011001100) | **Clave R2:** [vacío]
 
@@ -274,14 +288,17 @@ El bloque 1 tenía 2 bits de dispersión local y estaba referenciado por las dir
 El bloque 0 tenía 2 bits de dispersión local y estaba referenciado por las direcciones terminadas en 01. Para evaluar si se puede liberar, se identifican las entradas hermanas con un bit menos (terminadas en 11), descartando las que apuntan al bloque 0: esas entradas terminadas en 11 **no** apuntan todas al mismo bloque (la entrada 011 apunta al bloque 4 y la entrada 111 apunta al bloque 5). Como no coinciden, **no se puede liberar** el bloque 0: se escribe el bloque vacío y no se modifica la tabla. Las entradas que apuntaban a él (001 y 101) siguen apuntando al mismo bloque, que ahora está vacío.
 
 #### Tabla de dispersión
+
 *(sin cambios)*
 
 #### Archivo de datos
+
 - **#Bloque 0** | **Bits:** 2 | **Clave R1:** [vacío] | **Clave R2:** [vacío]
 
 ### Estado final
 
 #### Tabla de dispersión
+
 - **Bits de dispersión:** 3
 - **Sufijos:**
   - (000): #Bloque 2
@@ -294,6 +311,7 @@ El bloque 0 tenía 2 bits de dispersión local y estaba referenciado por las dir
   - (111): #Bloque 5
 
 #### Archivo de datos
+
 - **#Bloque 0** | **Bits:** 2 | **Clave R1:** [vacío] | **Clave R2:** [vacío]
 - **#Bloque 2** | **Bits:** 1 | **Clave R1:** Colapinto (1011001100) | **Clave R2:** [vacío]
 - **#Bloque 4** | **Bits:** 3 | **Clave R1:** Hamilton (1001001011) | **Clave R2:** [vacío]

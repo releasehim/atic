@@ -4,46 +4,43 @@
 
 ### Dinámica de la Cursada
 
-* 
-**Clases:** Instancias teóricas y prácticas. Las primeras clases se enfocarán fuertemente en definiciones y conceptos arquitectónicos del lenguaje antes de pasar de lleno a la resolución de problemas.
+*
 
+**Clases:** Instancias teóricas y prácticas. Las primeras clases se enfocarán fuertemente en definiciones y conceptos arquitectónicos del lenguaje antes de pasar de lleno a la resolución de problemas.
 
 * **Comunicación y consultas:** Centralizadas a través del servidor oficial de **Discord**.
 * **Evaluación:**
-* 
+*
+
 **2 entregas de ejercicios prácticos** realizados de manera individual.
 
+*
 
-* 
 **1 Trabajo final** de carácter grupal.
-
 
 * **Cuestionarios teóricos:** Se habilitará un cuestionario conceptual después de cada clase a través de la plataforma, con límite de entrega hasta la siguiente clase teórica.
 
+*
 
-* 
 **Material didáctico:** Todo el contenido estará disponible en la plataforma **Moodle**.
-
-
 
 ---
 
 ## 2. ¿Qué es Rust?
 
-> 
+>
 > **Definición fundamental:** Rust es un lenguaje de programación multiparadigma, compilado y de código abierto que se centra de manera estricta en la seguridad, la concurrencia y el rendimiento.
-> 
-> 
+>
+>
 
 ### Desglose de Conceptos Clave
 
 * **Multiparadigma:** Soporta e integra múltiples estilos de programación (como el paradigma funcional y la orientación a objetos).
 * **Código Abierto (Open Source):** Su código fuente es público, permitiendo la auditoría y colaboración comunitaria a diferencia de los entornos de código cerrado.
 * **Concurrencia:** Capacidad de dividir una tarea en subtareas para ejecutarlas de forma paralela (paralelismo). Rust destaca en este ámbito al proveer mecanismos seguros para compartir memoria y evitar conflictos sobre los recursos de la máquina.
-* 
+*
+
 **Compilado:** El código fuente de alto nivel escrito por el desarrollador es traducido íntegramente por un **compilador** (`rustc`) a código máquina (instrucciones binarias nativas). Esto genera un **archivo ejecutable independiente** que corre sin intermediarios en la plataforma objetivo.
-
-
 
 ---
 
@@ -72,16 +69,10 @@ Para entender este balance, podemos evaluar dónde impacta el esfuerzo del siste
 
 | Característica | Lenguajes con Garbage Collector (Ej: Java) | Rust |
 | --- | --- | --- |
-| **Manejo de Memoria** | Automático y asíncrono en ejecución. | Estricto, basado en reglas de diseño en compilación.
-
- |
+| **Manejo de Memoria** | Automático y asíncrono en ejecución. | Estricto, basado en reglas de diseño en compilación. |
 | **Sobrecarga (*Overhead*)** | **En tiempo de ejecución.** Mayor uso de CPU/RAM mientras el programa corre. | **En tiempo de compilación.** El proceso de compilación es más lento y linealmente pesado. |
-| **Abstracción** | Alto nivel, pero con un costo asociado de rendimiento. | <br>**Abstracciones de costo cero.** Permite alto nivel con rendimiento nativo.
-
- |
-| **Eficiencia de Ejecución** | Menor (afectada por las pausas de limpieza). | Máxima y optimizada (similar a C/C++).
-
- |
+| **Abstracción** | Alto nivel, pero con un costo asociado de rendimiento. | **Abstracciones de costo cero.** Permite alto nivel con rendimiento nativo. |
+| **Eficiencia de Ejecución** | Menor (afectada por las pausas de limpieza). | Máxima y optimizada (similar a C/C++). |
 
 > ⚠️ **Nota de Cursada:** A medida que los proyectos de la materia crezcan, notarán que los tiempos de compilación aumentarán de forma lineal. Este es el "costo" que pagamos a cambio de tener un ejecutable hiper-optimizado en producción.
 
@@ -89,77 +80,72 @@ Para entender este balance, podemos evaluar dónde impacta el esfuerzo del siste
 
 ## 4. Características Principales del Lenguaje
 
-* 
+*
+
 **Sistema de tipos estático y fuertemente tipado:** El tipo de cada variable debe conocerse en tiempo de compilación y no puede cambiar durante la ejecución.
 
+*
 
-* 
 **Seguridad de memoria total:** Garantiza que todas las referencias apunten a direcciones válidas. Esto previene errores históricos como:
 
+*
 
-* 
 *Uso después de liberar (Use-after-free)*.
 
+*
 
-* 
 *Doble liberación (Double free)*.
 
+*
 
-* 
 *Corrupción de memoria*.
 
+*
 
-* 
 *Null Pointer Exceptions:* No existen los punteros nulos. El compilador obliga explícitamente al desarrollador a controlar el caso de que "no haya nada".
 
+*
 
-
-
-* 
 **Sin condiciones de carrera (*Data Races*):** Garantiza que dos partes de un programa no puedan modificar el mismo espacio de memoria en simultáneo.
 
+*
 
-* 
 **Mensajes de error descriptivos:** El compilador de Rust está diseñado con un enfoque pedagógico; no solo tipifica y señala con precisión el error, sino que en la gran mayoría de los casos explica detalladamente cómo solucionarlo, haciendo innecesario el uso de asistentes externos o IA.
 
+*
 
-* 
 **Gestión de errores explícita:** Utiliza el tipo `Result` para obligar al programador a evaluar tanto el éxito como el fracaso de una operación. El compilador "no deja pasar una" y exige un modelado exhaustivo de todos los escenarios posibles.
-
-
 
 ---
 
 ## 5. Un poco de historia y Contexto de Mercado
 
-* 
+*
+
 **Orígenes:** El desarrollo comenzó en el año 2006 dentro de la **Fundación Mozilla** (creadores del navegador Firefox). La versión estable 1.0 se liberó en **2015**, por lo que es considerado un lenguaje moderno.
 
+*
 
-* 
 **Propósito Inicial:** Programación de sistemas de bajo nivel (Sistemas operativos, motores de navegación y motores de videojuegos).
 
-
 * **Adopción Actual:** Hoy en día se está utilizando activamente para migrar partes críticas del Kernel de Linux y de los sistemas de Windows. Grandes empresas tecnológicas lo implementan en infraestructura crítica:
-* 
+*
+
 **Android y Fuchsia OS (Google):** En componentes base de seguridad.
 
+*
 
-* 
 **Meta (Instagram/Facebook):** En optimización de servicios.
 
+*
 
-* 
 **Amazon (AWS):** Específicamente para la infraestructura de cómputo de sus servicios EC2.
-
 
 * **Discord:** Migró componentes core de sus sistemas debido a las exigencias de alta performance.
 
+*
 
-* 
 **Salida Laboral:** Aunque el mercado actual es más reducido en comparación con lenguajes históricos, la demanda de perfiles especializados es creciente y la oferta de programadores idóneos es sumamente baja, configurando un excelente *timing* para su adopción profesional.
-
-
 
 ### Estadísticas de Aceptación en la Comunidad (Stack Overflow)
 
@@ -167,46 +153,14 @@ Rust se ha posicionado como el **lenguaje más admirado y deseado por los desarr
 
 | Lenguaje | Deseado (*Desired*) | Admirado (*Admired*) |
 | --- | --- | --- |
-| Python | 39.3% 
-
- | 56.4% 
-
- |
-| SQL | 35.6% 
-
- | 56.4% 
-
- |
-| HTML/CSS | 33.8% 
-
- | 52.1% 
-
- |
-| JavaScript | 33.5% 
-
- | 46.8% 
-
- |
-| TypeScript | 31.9% 
-
- | 58.0% 
-
- |
-| **Rust** | <br>**29.2%** 
-
- | <br>**72.4%** 
-
- |
-| Bash/Shell | 27.4% 
-
- | 52.8% 
-
- |
-| Go | 23.4% 
-
- | 56.5% 
-
- |
+| Python | 39.3% | 56.4% |
+| SQL | 35.6% | 56.4% |
+| HTML/CSS | 33.8% | 52.1% |
+| JavaScript | 33.5% | 46.8% |
+| TypeScript | 31.9% | 58.0% |
+| **Rust** | **29.2%** | **72.4%** |
+| Bash/Shell | 27.4% | 52.8% |
+| Go | 23.4% | 56.5% |
 
 ---
 
@@ -214,20 +168,18 @@ Rust se ha posicionado como el **lenguaje más admirado y deseado por los desarr
 
 > 💡 **Recomendación Profesional:** Para el desarrollo de software y las materias correlativas de la carrera, se sugiere fuertemente familiarizarse con entornos Linux o MacOS. Los usuarios de Windows experimentarán un proceso más engorroso, por lo que se recomienda encarecidamente utilizar **WSL (Windows Subsystem for Linux)**.
 
-* 
-**En Linux / Mac OS:** Ejecutar en la terminal el comando oficial basado en `curl`:
+*
 
+**En Linux / Mac OS:** Ejecutar en la terminal el comando oficial basado en `curl`:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ```
 
+*
 
-* 
 **En Windows Nativo:** Descargar el instalador ejecutable correspondiente a la arquitectura de la máquina desde la web oficial de Rust.
-
-
 
 ---
 
@@ -239,7 +191,6 @@ A modo pedagógico, se puede compilar un único archivo sin herramientas adicion
 
 1. Crear un archivo llamado `main.rs`.
 
-
 2. Escribir el siguiente bloque de código:
 
 ```rust
@@ -250,12 +201,9 @@ fn main() {
 
 ```
 
-3. Compilar desde la terminal: `rustc main.rs`. Esto genera un archivo ejecutable binario.
+1. Compilar desde la terminal: `rustc main.rs`. Esto genera un archivo ejecutable binario.
 
-
-4. Ejecutar el binario generado: `./main` (en Linux/Mac) o `main.exe` (en Windows).
-
-
+2. Ejecutar el binario generado: `./main` (en Linux/Mac) o `main.exe` (en Windows).
 
 ### Comentarios
 
@@ -321,13 +269,11 @@ fn main() {
 
 Se declaran con la palabra reservada `const`.
 
-* 
+*
+
 **Regla estricta:** Es **obligatorio indicar explícitamente el tipo de dato**; el compilador no realiza inferencia en las constantes.
 
-
 * Son estrictamente inmutables y no admiten *shadowing*. Su valor queda fijado e inalterable durante toda la vida del programa.
-
-
 
 ```rust
 [cite_start]const MI_CONSTANTE: u8 = 10; [cite: 150]
@@ -353,10 +299,9 @@ Se segmentan de acuerdo a su tamaño en bits y a si aceptan signos negativos (*S
 | 128 bits | `i128` | `u128` |
 | Arquitectura del Sistema | `isize` | `usize` |
 
-* 
+*
+
 **Literales de diseño:** Rust permite usar guiones bajos en números grandes para mejorar la legibilidad visual en el código fuente (Ej: `let num = 32_500;`). También admite formatos Hexadecimal (`0xff`), Octal (`0o77`), Binario (`0b1111_0000`) y representación de Bytes (`b'A'`).
-
-
 
 ### B. Punto Flotante (*Floating-Point*)
 
@@ -390,14 +335,13 @@ let c = 'z';
 
 Rust maneja los strings de dos formas diferenciadas debido a cómo se organiza la memoria física (Pila/*Stack* vs Montículo/*Heap*):
 
-1. 
+1.
+
 **`&str` (Slice de String):** Es una cadena inmutable y de longitud fija. El texto literal escrito entre comillas dobles es siempre un `&str` y se almacena en la memoria estática de la pila.
 
+1.
 
-2. 
 **`String`:** Es una estructura mutable de longitud variable. Almacena la información en el *heap* (montículo), lo que permite que el texto crezca o decrezca de forma dinámica en ejecución.
-
-
 
 ```rust
 fn main() {
@@ -418,10 +362,7 @@ Colección de **tamaño fijo** que permite agrupar elementos de **diferentes tip
 
 * Admite desestructuración o desempaquetado (*Unpacking*) para asignar sus valores a variables independientes de forma directa.
 
-
 * El acceso individual a los campos se realiza mediante la nomenclatura de punto seguido del índice numérico (`tupla.0`).
-
-
 
 ```rust
 fn main() {
@@ -447,8 +388,6 @@ fn main() {
 
 * **Funciones Asociadas (Métodos):** En Rust, los métodos propios de las estructuras se denominan funciones asociadas. El método `.last()` de un arreglo busca obtener su último elemento. Debido a la seguridad de Rust, si el arreglo estuviera vacío, este método devolvería un tipo seguro (`Option`) que evita que el programa rompa. Emplear `.unwrap()` desenvuelve el valor directamente asumiendo que como desarrolladores garantizamos que el dato existe.
 
-
-
 ---
 
 ## 11. Estructura de Proyectos Avanzada con Cargo
@@ -459,18 +398,16 @@ Para programas de producción o sistemas de gran envergadura no se compilan arch
 
 Ejecutando el comando: `cargo new nombre_del_proyecto`. Cargo estructurará el entorno automáticamente:
 
-* 
+*
+
 **`Cargo.toml`:** Archivo de configuración donde se definen los metadatos y las dependencias (librerías de terceros) del proyecto.
 
+*
 
-* 
 **Carpeta `src/`:** Contiene el código fuente del desarrollo.
-
 
 * Generará un `main.rs` si el proyecto es una aplicación ejecutable binaria.
 * Generará un `lib.rs` si el proyecto se diseña para ser una librería reutilizable por terceros.
-
-
 
 ### Comandos Esenciales de Cargo
 
@@ -484,10 +421,9 @@ Las librerías en Rust se denominan **Crates**. El repositorio central de la com
 
 * **Instalación Automática:** Desde la terminal del proyecto, ejecuta `cargo add nombre_de_la_crate` (Ej: `cargo add rand`). Esto modificará automáticamente el archivo `Cargo.toml`.
 * **Criterios de Selección de una Crate:** Al buscar librerías de terceros, es vital analizar dos métricas en la web oficial para garantizar seguridad y mantenimiento:
+
 1. El volumen histórico de descargas (a mayor número, mayor validación comunitaria).
 2. La fecha de la última actualización (evitar librerías discontinuadas o sin soporte hace años).
-
-
 
 ---
 
@@ -527,107 +463,24 @@ Rust ofrece compatibilidad e integración con múltiples editores del mercado me
 
 | Editor / IDE | Sintaxis (`.rs`) | Sintaxis (`.toml`) | Snippets | Completado | Linting | Formateo | Ir a Def | Debugging |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <br>**VS Code** 
-
- | plugin 
-
- | ✓ 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | ✓ 
-
- |
-| <br>**Vim / Neovim** 
-
- | ✓ 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- |
-| <br>**Sublime Text** 
-
- | ✓ 
-
- | plugin 
-
- | ✓ 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin | — |
-| <br>**Emacs** 
-
- | plugin 
-
- | ✓ 
-
- | plugin 
-
- | ✓ 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- |
-| <br>**IntelliJ IDEs** 
-
- | ✓ 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin 
-
- | plugin |
+| **VS Code** | plugin | ✓ | plugin | plugin | plugin | plugin | plugin | ✓ |
+| **Vim / Neovim** | ✓ | plugin | plugin | plugin | plugin | plugin | plugin | plugin |
+| **Sublime Text** | ✓ | plugin | ✓ | plugin | plugin | plugin | plugin | — |
+| **Emacs** | plugin | ✓ | plugin | ✓ | plugin | plugin | plugin | plugin |
+| **IntelliJ IDEs** | ✓ | plugin | plugin | plugin | plugin | plugin | plugin | plugin |
 
 ### Configuración Recomendada para la Materia
 
 Se aconseja a los alumnos utilizar **Visual Studio Code** junto con las siguientes tres extensiones fundamentales para facilitar el desarrollo en la cursada:
 
-1. 
+1.
+
 **`rust-analyzer`:** Ejecuta chequeos continuos de código en segundo plano, autocompleta sintaxis y expone advertencias antes de compilar.
 
+1.
 
-2. 
 **`better-toml`:** Provee resaltado de sintaxis correcto y validación para el archivo `Cargo.toml`.
 
+1.
 
-3. 
 **`crates`:** Analiza las versiones de las librerías declaradas en el `.toml` y asiste autocompletando las dependencias disponibles en tiempo real.

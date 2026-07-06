@@ -1,6 +1,7 @@
 # Rust 2025 - Clase 2
 
 ## Temario
+
 * Estructuras de control
 * Funciones
 * Testing
@@ -266,19 +267,22 @@ fn mi_funcion(data: i32) -> i32 {
 ## Concepto general
 
 Para el manejo de memoria de los programas hay dos enfoques comunes:
-1.  **Garbage Collector**: Busca periódicamente memoria que no se use para limpiarla.
-2.  **Asignación y liberación explícita**: El programador debe encargarse de la memoria manualmente.
+
+1. **Garbage Collector**: Busca periódicamente memoria que no se use para limpiarla.
+2. **Asignación y liberación explícita**: El programador debe encargarse de la memoria manualmente.
 
 Rust usa un tercer enfoque: la memoria se administra a través del concepto de **propiedad (ownership)** y un conjunto de reglas.
 
 ### Reglas del Ownership
-1.  Cada valor en Rust tiene un **dueño**.
-2.  Solo puede haber un **dueño a la vez**.
-3.  Cuando el dueño queda fuera del alcance (scope), el valor se **eliminará**.
+
+1. Cada valor en Rust tiene un **dueño**.
+2. Solo puede haber un **dueño a la vez**.
+3. Cuando el dueño queda fuera del alcance (scope), el valor se **eliminará**.
 
 ### Stack vs Heap
-*   **Stack**: Es rápida, se libera al finalizar el scope. Aquí van los datos de tipo conocido en tiempo de compilación (ej. `i32`).
-*   **Heap**: Es flexible, tiene un costo elevado en asignar y recuperar datos. Se libera cuando ya no tiene dueños. Aquí van los datos de tamaño desconocido en tiempo de compilación (ej. `String`).
+
+* **Stack**: Es rápida, se libera al finalizar el scope. Aquí van los datos de tipo conocido en tiempo de compilación (ej. `i32`).
+* **Heap**: Es flexible, tiene un costo elevado en asignar y recuperar datos. Se libera cuando ya no tiene dueños. Aquí van los datos de tamaño desconocido en tiempo de compilación (ej. `String`).
 
 ## Comportamiento con tipos `Copy`
 
@@ -291,11 +295,12 @@ fn main() {
 ```
 
 ### Tipos que implementan el trait Copy
-*   Todos los enteros (`u32`, `i32`, etc.).
-*   Booleanos (`bool`).
-*   Punto flotante (`f32`, `f64`).
-*   Caracteres (`char`).
-*   Tuplas que solo contengan tipos que implementen `Copy`.
+
+* Todos los enteros (`u32`, `i32`, etc.).
+* Booleanos (`bool`).
+* Punto flotante (`f32`, `f64`).
+* Caracteres (`char`).
+* Tuplas que solo contengan tipos que implementen `Copy`.
 
 ## Comportamiento con `String` (dueño movido)
 
@@ -319,6 +324,7 @@ Cuando el tipo no implementa `Copy`, el valor se mueve y el dueño original ya n
 +--------+              |
                         (Tanto s1 como s2 apuntan al mismo bloque en el heap)
 ```
+
 *(Nota: En realidad, en el caso de una `String`, hacer `let s2 = s1` mueve el puntero a `s2` e invalida `s1` para evitar el doble `free`; el gráfico representa el estado conceptual del puntero compartido).*
 
 ## Funciones y Ownership
@@ -521,11 +527,12 @@ fn main() {
 ```
 
 **Explicación**:
-*   `&a` vive todo `main`.
-*   `&b` vive solo dentro del bloque.
-*   `mayor` podría devolver `&b`.
-*   Entonces `'a = lifetime de b` (el más corto).
-*   `r` no puede usarse después del bloque porque podría estar apuntando a `b`, por lo tanto, **Rust te impide compilar**.
+
+* `&a` vive todo `main`.
+* `&b` vive solo dentro del bloque.
+* `mayor` podría devolver `&b`.
+* Entonces `'a = lifetime de b` (el más corto).
+* `r` no puede usarse después del bloque porque podría estar apuntando a `b`, por lo tanto, **Rust te impide compilar**.
 
 ## Sintaxis de Lifetime
 
@@ -545,10 +552,10 @@ En desarrollo de software, es la práctica en la cual se crean pruebas automatiz
 
 ## Algunas ventajas
 
-*   **Detección temprana de errores**: Permite identificar y corregir errores en las primeras etapas del desarrollo.
-*   **Mejora de la calidad del código**: Promueve la escritura de código más limpio, modular y de alta calidad.
-*   **Facilita la refactorización**: Si las pruebas pasan después de realizar cambios, da confianza de que la funcionalidad sigue intacta.
-*   **Documentación viva**: Al leer las pruebas, se obtiene una comprensión clara de cómo se espera que funcione cada unidad de código.
+* **Detección temprana de errores**: Permite identificar y corregir errores en las primeras etapas del desarrollo.
+* **Mejora de la calidad del código**: Promueve la escritura de código más limpio, modular y de alta calidad.
+* **Facilita la refactorización**: Si las pruebas pasan después de realizar cambios, da confianza de que la funcionalidad sigue intacta.
+* **Documentación viva**: Al leer las pruebas, se obtiene una comprensión clara de cómo se espera que funcione cada unidad de código.
 
 > **Importante**: Unit testing no asegura que nuestro código no tenga errores, sino que es una **buena práctica para reducirlos**.
 

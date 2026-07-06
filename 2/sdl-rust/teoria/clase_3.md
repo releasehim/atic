@@ -1,6 +1,7 @@
 # Clase 3: Structs, Enums, Option y Collections (Parte 1)
 
 ## Temario
+
 - Structs
 - Enums
 - Option
@@ -11,9 +12,11 @@
 ## Structs
 
 ### ¿Qué son?
+
 Es un tipo de dato personalizado que permite empaquetar y nombrar valores relacionados que forman un conjunto de datos. Son similares, en la programación orientada a objetos, al conjunto de atributos que tiene una clase.
 
 ### ¿Cómo se definen?
+
 Se definen con la palabra clave `struct` de la siguiente manera:
 
 ```rust
@@ -44,6 +47,7 @@ fn main() {
 ```
 
 ### Init Shorthand
+
 Cuando el nombre del campo y la variable que se asigna coinciden, se puede usar la sintaxis abreviada.
 
 ```rust
@@ -66,6 +70,7 @@ fn nueva_persona(nombre: String, apellido: String, dni: i32) -> Persona {
 ```
 
 ### Modificaciones
+
 Para modificar un campo, la instancia debe ser declarada como `mut`.
 
 ```rust
@@ -83,6 +88,7 @@ fn main() {
 ```
 
 ### Creando instancias desde otra instancia (Struct Update Syntax)
+
 Se puede crear una nueva instancia usando los valores de otra, sobrescribiendo los campos que se deseen.
 
 ```rust
@@ -101,6 +107,7 @@ fn main() {
 ```
 
 ### Tuple Structs
+
 Permiten crear estructuras sin nombres de campos, accediendo a ellos mediante índices (`.0`, `.1`, etc.).
 
 ```rust
@@ -113,6 +120,7 @@ fn main() {
 ```
 
 ### Implementando Métodos (Funciones Asociadas)
+
 Se utiliza el bloque `impl` para definir funciones asociadas a la estructura.
 
 ```rust
@@ -135,6 +143,7 @@ fn main() {
 ```
 
 ### Otro ejemplo con `derive(Debug)`
+
 Si se quiere imprimir la estructura, se debe implementar el trait `Debug` o derivarlo.
 
 ```rust
@@ -158,6 +167,7 @@ fn main() {
 ```
 
 ### Funciones Asociadas (Constructores)
+
 Todas las funciones definidas dentro de un bloque `impl` se denominan funciones asociadas. Las que no reciben `self` como primer parámetro no son métodos y se suelen usar como constructores. `new` es una convención común, no una palabra reservada.
 
 ```rust
@@ -183,6 +193,7 @@ fn main() {
 ## Enums
 
 ### Definición y uso básico
+
 `enum` es un tipo de dato que permite definir distintas variaciones.
 
 ```rust
@@ -210,6 +221,7 @@ fn main() {
 ```
 
 ### Enums con valores asociados
+
 Se pueden asociar datos directamente a las variantes del enum.
 
 ```rust
@@ -236,6 +248,7 @@ fn main() {
 ```
 
 ### Enums con Structs internos
+
 Las variantes pueden contener estructuras completas.
 
 ```rust
@@ -284,6 +297,7 @@ fn main() {
 ## Option
 
 ### ¿Qué es?
+
 `Option` es un enum disponible en la librería estándar. Tiene dos variantes: `Some(T)` y `None`.
 Rust obliga a manejar explícitamente la ausencia de valor para evitar errores de tipo `NullPointerException`.
 
@@ -379,6 +393,7 @@ fn main() {
 ```
 
 ### Sintaxis `if let`
+
 Permite ejecutar código solo si el patrón coincide.
 
 ```rust
@@ -390,6 +405,7 @@ if let Some(data) = persona.dni {
 ```
 
 ### Sintaxis `let else`
+
 Permite extraer el valor o salir del ámbito actual si es `None`.
 
 ```rust
@@ -399,6 +415,7 @@ let Some(data) = persona.dni else {
 ```
 
 ### Sintaxis `while let`
+
 Permite ejecutar un bucle mientras el patrón coincida.
 
 ```rust
@@ -425,11 +442,13 @@ fn main() {
 ## Collections (Primera Parte)
 
 ### Sequences
+
 - **Vec**: Vector dinámico.
 - **VecDeque**: Cola de doble extremo.
 - **LinkedList**: Lista enlazada.
 
 ### Maps
+
 - **HashMap**: Mapa basado en hash.
 - **BTreeMap**: Mapa basado en árbol B.
 

@@ -19,10 +19,13 @@ En la materia se trabajan tres tipos de archivos:
 Existen dos formas de definir un archivo:
 
 * **Forma 1 (en `var`):**
+
   ```pascal
   var archivo_logico: file of tipo_de_dato;
   ```
+
 * **Forma 2 (en `type`):**
+
   ```pascal
   type archivo = file of tipo_de_datos;
   var archivo_logico: archivo;

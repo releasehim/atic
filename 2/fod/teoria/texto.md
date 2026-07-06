@@ -1,11 +1,14 @@
 # 2 - Archivos de texto y binarios
 
 ## Diapositiva 1
+
 Fundamentos de Organización de Datos
 Archivos de texto y binarios
 
 ## Diapositiva 2
+
 ### Ejemplo-archivo de texto- binario (Definiciones)
+
 ```pascal
 Type
   tRegistroVotos = Record
@@ -27,7 +30,9 @@ Var
 ```
 
 ## Diapositiva 3
+
 ### Ejemplo-archivo de texto- binario (Menú)
+
 ```pascal
 Begin 
   WriteLn('VOTOS');
@@ -46,7 +51,9 @@ Begin
 ```
 
 ## Diapositiva 4
+
 ### Ejemplo-archivo de texto- binario (Opción 1: Texto -> Binario)
+
 ```pascal
     {Opción 1 crea el archivo binario desde un texto}
     Case opc of 
@@ -65,10 +72,13 @@ Begin
         Close(arch); Close(carga); {cierra los dos archivos}
       end;
 ```
+
 *¿Qué sucede cuando tengo más de 1 campo String en un archivo de texto?*
 
 ## Diapositiva 5
+
 ### Ejemplo-archivo de texto- binario (Opción 2: Binario -> Texto)
+
 ```pascal
       {Opcion 2 exporta el contenido del binario a un texto}
       2: begin
@@ -88,4 +98,5 @@ End
 ```
 
 ## Diapositiva 6
+
 ¿Dudas?

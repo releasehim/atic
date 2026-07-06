@@ -6,8 +6,6 @@
 
                                   Archivos Secuenciales ordenados - Algorítmica Clásica
 
-
-
  1.​ Una empresa posee un archivo que contiene información sobre los ingresos percibidos por diferentes
      empleados en concepto de comisión. De cada empleado se conoce: código de empleado, nombre y
      monto de la comisión.
@@ -21,8 +19,6 @@
 
          Nota: No se conoce a priori la cantidad de empleados. Además, el archivo debe ser recorrido una única
          vez.
-
-
 
 2.​     El encargado de ventas de un negocio de productos de limpieza desea administrar el stock de los productos
        que comercializa. Para ello, dispone de un archivo maestro en el que se registran todos los productos.
@@ -104,8 +100,6 @@
        diferentes máquinas.
     ●​ El archivo maestro debe crearse en la siguiente ubicación física: /var/log.
 
-
-
 6.​ Se desea modelar la información necesaria para un sistema de recuento de casos de COVID del
     Ministerio de Salud de la Provincia de Buenos Aires.
 
@@ -129,8 +123,6 @@
 
  Realizar las declaraciones necesarias, el programa principal y los procedimientos que se requieran para
  efectuar la actualización solicitada.
-
-
 
                                                                                                                3
  Además, informar la cantidad de localidades que poseen más de 50 casos activos, independientemente de
@@ -174,9 +166,6 @@
        garantiza que un alumno no puede aprobar más de una vez la cursada de una misma materia. De
        manera análoga, tampoco puede aprobar más de una vez el examen final de una misma materia.
 
-
-
-
 8.​ Se desea gestionar la información correspondiente al consumo de yerba mate en las distintas provincias
     de la Argentina.
 
@@ -204,8 +193,6 @@
 
  Nota: Cada archivo debe recorrerse una única vez.
 
-
-
 9.​ Se cuenta con un archivo que posee información de las ventas que realiza una empresa a los diferentes
     clientes. Se necesita obtener un reporte con las ventas organizadas por cliente. Para ello, se deberá
     informar por pantalla: los datos personales del cliente, el total mensual (mes por mes cuánto compró) y
@@ -217,8 +204,6 @@
 
     Nota: tenga en cuenta que puede haber meses en los que los clientes no realizaron compras. No es
     necesario que informe tales meses en el reporte.
-
-
 
 10.​ Se necesita contabilizar los votos de las diferentes mesas electorales registradas por provincia y
      localidad. Para ello, se posee un archivo con la siguiente información: código de provincia, código de
@@ -383,8 +368,6 @@
 
        NOTA: El archivo maestro y los archivos detalles sólo pueden recorrerse una vez.
 
-
-
 15.​ Se desea modelar la información de una ONG dedicada a la asistencia de personas con carencias
      habitacionales. La ONG cuenta con un archivo maestro conteniendo información como se indica a
      continuación: Código pcia, nombre provincia, código de localidad, nombre de localidad, #viviendas sin
@@ -435,7 +418,6 @@
     NOTA: Todos los archivos están ordenados por código de la moto y el archivo maestro debe ser recorrido
     sólo una vez y en forma simultánea con los detalles.
 
-
 18.​ Se cuenta con un archivo con información de los casos de COVID-19 registrados en los diferentes hospitales
      de la Provincia de Buenos Aires cada día. Dicho archivo contiene: código de localidad, nombre de localidad,
                                                                                                                9
@@ -483,12 +465,10 @@
 
     NOTA: El archivo debe recorrerse solo una vez.
 
-
 19.​ A partir de un siniestro ocurrido se perdieron las actas de nacimiento y fallecimientos de toda la
      provincia de buenos aires de los últimos diez años. En pos de recuperar dicha información, se deberá
      procesar 2 archivos por cada una de las 50 delegaciones distribuidas en la provincia, un archivo de
      nacimientos y otro de fallecimientos y crear el archivo maestro reuniendo dicha información.
-
 
                                                                                                                 10
   Los archivos detalles con nacimientos, contendrán la siguiente información: nro partida nacimiento,
@@ -503,18 +483,11 @@
   deceso, fecha y hora del deceso y lugar. Se deberá, además, listar en un archivo de texto la información
   recolectada de cada persona.
 
-
   Nota: Todos los archivos están ordenados por nro partida de nacimiento que es única. Tenga en cuenta
   que no necesariamente va a fallecer en el distrito donde nació la persona y además puede no haber
   fallecido.
 
-
-
 IMPORTANTE: Se recomienda implementar los ejercicios prácticos en Dev-Pascal. El ejecutable
 puede descargarse desde la plataforma moodle.
 
-
-
-
                                                                                                        11
-

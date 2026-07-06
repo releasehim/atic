@@ -1,6 +1,7 @@
 # Clase 7: Archivos con Serde, Tests y Smart Pointers
 
 ## Temario
+
 - Archivos con Serde
 - Más sobre Testing
 - Smart Pointers
@@ -9,7 +10,7 @@
 
 ## Archivos con Serde
 
-**Serde** es un *framework* para serializar y deserializar structs de Rust de manera eficiente y genérica. 
+**Serde** es un *framework* para serializar y deserializar structs de Rust de manera eficiente y genérica.
 El ecosistema de Serde consiste en estructuras de datos que saben cómo serializarse y deserializarse a sí mismos, junto con formatos de datos que saben cómo serializar y deserializar otras cosas. Serde proporciona la capa por la cual estos dos grupos interactúan.
 
 Algunos formatos compatibles: JSON, YAML, TOML, Pickle, BSON, etc.
@@ -109,6 +110,7 @@ fn main() {
 En desarrollo de software es la práctica en la cual se crean pruebas automatizadas para verificar el correcto funcionamiento individual de las unidades de código más pequeñas (funciones, métodos). Estas pruebas se enfocan en aislar y probar una unidad de código de forma independiente.
 
 ### Ventajas de Unit Testing
+
 - **Detección temprana de errores:** Permite identificar errores en etapas tempranas.
 - **Mejora de la calidad del código:** Promueve código más limpio y modular.
 - **Facilita la refactorización:** Da seguridad al modificar el código.
@@ -144,6 +146,7 @@ cargo test prefijo            # Ejecuta los tests que empiecen con un prefijo
 Es una métrica que indica el porcentaje de código fuente que ha sido ejecutado durante la ejecución de las pruebas. Una alta cobertura no garantiza la ausencia de errores, pero proporciona una mayor confianza en la calidad del software.
 
 **Ventajas:**
+
 - Identificación de código no probado.
 - Guía para la creación de nuevas pruebas.
 - Medición de la calidad de las pruebas.
@@ -172,6 +175,7 @@ cargo tarpaulin --target-dir src/coverage --skip-clean --out html
 #### Error de tipo común con `Box`
 
 **Imagen reemplazada (Error de compilación):**
+
 ```text
 fn main() {
     let caja = Box::new(5);
@@ -291,9 +295,11 @@ fn main() {
 ```
 
 **Error al intentar llamar a `drop` explícitamente:**
+
 ```rust
 caja.drop(); // error[E0040]: explicit use of destructor method not allowed
 ```
+
 **Solución correcta:** Usar la función `std::mem::drop`.
 
 ```rust
@@ -303,6 +309,7 @@ drop(caja);
 ### Extra: Diagrama de Herencia (Rust)
 
 **Imagen reemplazada (Diagrama de Vehículo reutilizado):**
+
 ```text
           +---------------------------------------------------+
           |                     Vehiculo (Trait)               |
@@ -333,6 +340,7 @@ drop(caja);
 Permite la **propiedad múltiple** (Multiple Ownership). Es útil en estructuras como grafos, donde un nodo puede tener varios padres.
 
 **Imagen reemplazada (Diagrama de Grafo para propiedad múltiple):**
+
 ```text
       (a)
      / | \
@@ -346,6 +354,7 @@ Permite la **propiedad múltiple** (Multiple Ownership). Es útil en estructuras
            |
           (c)
 ```
+
 *Un nodo `c` puede ser apuntado por múltiples nodos (`b`, `d`, `f`), requiriendo propiedad múltiple.*
 
 #### Error de Propiedad Múltiple con `Box`
@@ -495,6 +504,7 @@ fn psudo_dfs_mutable(a: &Rc<MiLista>) {
 ```
 
 #### Repaso de Smart Pointers
+
 | Smart Pointer | Propiedad | Préstamos (Borrowing) | Verificación |
 | :--- | :--- | :--- | :--- |
 | **Box<T>** | Única | Inmutable o Mutable | Tiempo de compilación |

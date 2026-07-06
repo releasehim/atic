@@ -7,6 +7,7 @@ Nodo 0: 5 h (34)(56)(78)(100)(176)
 ```
 
 **Parámetros del orden 6:**
+
 - Máximo de claves por nodo: 5
 - Mínimo de claves por nodo (excepto raíz): 2 = ⌈6/2⌉ − 1
 - Al hacer split de 6 claves: [a, b, c, d, e, f] → izquierda [a, b], promover **c**, derecha [d, e, f]

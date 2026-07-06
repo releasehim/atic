@@ -9,6 +9,7 @@ Nodo 1: 3 h (77)(79)(92)
 ```
 
 **Parámetros del orden 4:**
+
 - Máximo de claves por nodo: 3
 - Mínimo de claves por nodo (excepto raíz): 1 = ⌈4/2⌉ − 1
 - Al hacer split de 4 claves: [a, b, c, d] → izquierda [a, b], promover **c**, derecha [d]

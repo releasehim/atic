@@ -1,6 +1,7 @@
 # Clase 6: Iterators, Manejo de errores, Prelude y Archivos
 
 ## Temario
+
 - Iterators
 - Manejo de errores
 - Prelude
@@ -11,9 +12,11 @@
 ## Iterators
 
 ### ¿Qué es?
+
 Iterator es un patrón de diseño de comportamiento que te permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).
 
 ### Iterator en Rust
+
 Rust implementa el trait `Iterator` para sus colecciones, permitiendo que se usen como tales.
 
 ```rust
@@ -61,6 +64,7 @@ fn main() {
 ```
 
 ### Iterator y Closures
+
 Los métodos de `Iterator` aceptan closures para filtrar o transformar datos.
 
 ```rust
@@ -112,12 +116,12 @@ fn main() {
 
 Rust agrupa los errores en dos categorías:
 
-1.  **Recuperables:** Por ejemplo, un archivo no encontrado. El error se informa pero el programa puede continuar.
-2.  **Irrecuperables:** Señalan bugs, como acceder a una posición inválida de un arreglo.
+1. **Recuperables:** Por ejemplo, un archivo no encontrado. El error se informa pero el programa puede continuar.
+2. **Irrecuperables:** Señalan bugs, como acceder a una posición inválida de un arreglo.
 
 Rust no tiene excepciones. En su lugar, usa el tipo `Result<T, E>` para errores recuperables y la macro `panic!` para errores irrecuperables.
 
-### Panic!
+### Panic
 
 ```rust
 fn main() {
@@ -181,6 +185,7 @@ fn main() {
 ```
 
 #### El operador `?` (Question Mark)
+
 El operador `?` propaga el error automáticamente si falla, o extrae el valor si tiene éxito.
 
 ```rust
@@ -208,6 +213,7 @@ impl Persona {
 ```
 
 #### `panic!` o `expect()`
+
 Si prefieres que un error irrecuperable detenga el programa, puedes usar `unwrap()` o `expect()`.
 
 ```rust

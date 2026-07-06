@@ -1,5 +1,7 @@
 # Práctica 4 - Ejercicio 5
+
 ## Fundamentos de Organización de Datos - UNLP
+
 ### Conceptos: Overflow, Underflow, Redistribución y Fusión en Árboles B
 
 ---
@@ -14,11 +16,13 @@
 El **overflow** ocurre cuando un nodo recibe una clave adicional que excede su capacidad máxima de almacenamiento. En un árbol B de orden M, un nodo puede contener como máximo **M-1 claves**. Si se intenta insertar una clave en un nodo que ya tiene M-1 claves, el nodo pasa a tener M claves → se produce overflow.
 
 **¿Cuándo ocurre?**
+
 - Durante una operación de **inserción** de una nueva clave.
 - La clave nueva se inserta en el nodo hoja correspondiente siguiendo el criterio de ordenamiento.
 - Si ese nodo hoja ya está lleno (M-1 claves), al agregar la nueva queda con M claves → overflow.
 
 **¿Cómo se resuelve?**
+
 1. Se **divide** el nodo desbordado en dos nodos.
 2. Las M claves se distribuyen equitativamente:
    - Las `⌊M/2⌋` menores quedan en el nodo original.
@@ -48,6 +52,7 @@ Por ejemplo, para M=4: min = ⌈4/2⌉ - 1 = 2 - 1 = **1 clave mínima**.
 Para M=5: min = ⌈5/2⌉ - 1 = 3 - 1 = **2 claves mínimas**.
 
 **¿Cuándo ocurre?**
+
 - Durante una operación de **eliminación** de una clave.
 - Después de eliminar la clave de un nodo, si el nodo queda con menos del mínimo de claves → underflow.
 - También puede ocurrir en **cascada**: al resolver un underflow en un nodo hijo mediante fusión, el padre pierde una clave y puede también hacer underflow.
@@ -62,17 +67,20 @@ Para M=5: min = ⌈5/2⌉ - 1 = 3 - 1 = **2 claves mínimas**.
 La **redistribución** es el mecanismo que se aplica para resolver un underflow moviéndole claves desde un **nodo hermano adyacente** que tenga más del mínimo de claves (es decir, que pueda "donar" una clave sin caer en underflow él mismo).
 
 **¿Cuándo se aplica?**
+
 - SIEMPRE se intenta PRIMERO la redistribución antes que la fusión.
 - Es aplicable cuando el hermano adyacente (izquierdo o derecho, según la política) tiene **más del mínimo de claves** (es decir, `cant_claves > min_claves`), lo que significa que puede ceder una clave sin caer en underflow.
 
 **¿Cómo funciona?**
 
 *Redistribución con hermano IZQUIERDO:*
+
 1. La mayor clave del hermano izquierdo **sube** al padre (reemplaza al separador).
 2. El separador del padre **baja** al nodo con underflow (se inserta como primera clave).
 3. El árbol permanece balanceado y no se crean ni destruyen nodos.
 
 *Redistribución con hermano DERECHO:*
+
 1. La menor clave del hermano derecho **sube** al padre (reemplaza al separador).
 2. El separador del padre **baja** al nodo con underflow (se inserta como última clave).
 3. El árbol permanece balanceado y no se crean ni destruyen nodos.
@@ -89,10 +97,12 @@ La **redistribución** es el mecanismo que se aplica para resolver un underflow 
 La **fusión** (o concatenación) es el mecanismo que se aplica para resolver un underflow cuando la redistribución NO es posible. Consiste en combinar el nodo deficiente, el separador del padre y el nodo hermano en un único nodo.
 
 **¿Cuándo se aplica?**
+
 - Cuando la redistribución NO es posible porque el hermano adyacente tiene exactamente el **mínimo de claves** (no puede ceder ninguna sin caer en underflow él mismo).
 - Se aplica DESPUÉS de intentar (y fallar) la redistribución.
 
 **¿Cómo funciona?**
+
 1. Se toma el nodo con underflow (vacío o deficiente).
 2. Se toma el **separador** del nodo padre que separa al nodo deficiente de su hermano.
 3. Se toma el **nodo hermano** (con el mínimo de claves).
@@ -111,7 +121,7 @@ La **fusión** (o concatenación) es el mecanismo que se aplica para resolver un
 ## 📋 Resumen Comparativo
 
 | Concepto | Causa | Efecto | Nodos creados/destruidos |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Overflow** | Inserción en nodo lleno | División del nodo y promoción | Siempre crea 1 nodo nuevo |
 | **Underflow** | Eliminación en nodo con mínimo | Nodo deficiente | Puede causar redistribución o fusión |
 | **Redistribución** | Underflow con hermano "rico" | Claves se redistribuyen vía padre | No crea ni destruye nodos |
@@ -128,7 +138,7 @@ Según la **política de resolución** definida para el árbol:
    - **Fusionar** con el hermano indicado por la política.
 3. **Propagación**: si la fusión causa underflow en el padre, repetir desde el paso 1 con el padre.
 
-### Políticas de underflow:
+### Políticas de underflow
 
 - **Política izquierda**: intentar redistribución con hermano izquierdo → si no se puede, fusión con hermano izquierdo.
 - **Política derecha**: intentar redistribución con hermano derecho → si no se puede, fusión con hermano derecho.

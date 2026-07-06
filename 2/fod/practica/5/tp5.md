@@ -1,6 +1,9 @@
 # Introducción a las Bases de Datos
+
 ## Fundamentos de Organización de Datos
+
 ### Práctica 5
+
 #### Hashing (Dispersión)
 
 ---
@@ -33,7 +36,7 @@ Nota: (+) indica una operación de inserción, (-) indica una operación de baja
 **7.** Para las siguientes claves, realice el proceso de dispersión mediante el método de hashing extensible, sabiendo que cada nodo tiene capacidad para dos registros. El número natural indica el orden de llegada de las operaciones. Se debe mostrar el estado del archivo para cada operación. Justifique brevemente ante colisión y desborde los pasos que realiza.
 
 | # | Operación | Clave | Código binario |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | + | Darin | 00111111 |
 | 2 | + | Alterio | 11110100 |
 | 3 | + | Sbaraglia | 10100101 |
@@ -46,7 +49,7 @@ Nota: (+) indica una operación de inserción, (-) indica una operación de baja
 **8.** Realice el proceso de dispersión mediante el método de hashing extensible, sabiendo que cada registro tiene capacidad para dos claves. El número natural indica el orden de llegada de las operaciones. Se debe mostrar el estado del archivo para cada operación. Justifique brevemente ante colisión y desborde los pasos que realiza.
 
 | # | Operación | Clave | Código binario |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | + | Buenos Aires | ....1001 |
 | 2 | + | San Juan | ....0100 |
 | 3 | + | Entre Ríos | ....1110 |
@@ -61,7 +64,7 @@ Nota: (+) indica una operación de inserción, (-) indica una operación de baja
 **9.** Para las siguientes claves, realice el proceso de dispersión mediante el método de hashing extensible, sabiendo que cada nodo tiene capacidad para dos registros. El número natural indica el orden de llegada de las operaciones. Se debe mostrar el estado del archivo para cada operación. Justifique brevemente ante colisión y desborde los pasos que realiza.
 
 | # | Operación | Clave | Código binario |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | + | Guillermo.B | 01100011 |
 | 2 | + | Gomez | 00000001 |
 | 3 | + | Gustavo.B | 01010110 |
@@ -74,7 +77,7 @@ Nota: (+) indica una operación de inserción, (-) indica una operación de baja
 **10.** Para las siguientes claves, realice el proceso de dispersión mediante el método de hashing extensible, sabiendo que cada nodo tiene capacidad para dos registros. El número natural indica el orden de llegada de las operaciones. Se debe mostrar el estado del archivo para cada operación. Justifique brevemente ante colisión y desborde los pasos que realiza.
 
 | # | Operación | Clave | Código binario |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | + | Mansilla | 01100010 |
 | 2 | + | Cetré | 10001000 |
 | 3 | + | Ascacibar | 01010111 |
@@ -87,7 +90,7 @@ Nota: (+) indica una operación de inserción, (-) indica una operación de baja
 **11.** Realice el proceso de dispersión mediante el método de hashing extensible, sabiendo que cada nodo tiene capacidad para dos claves. El número natural indica el orden de llegada de las operaciones. Deberá explicar los pasos que realiza en cada operación y dibujar los estados sucesivos correspondientes (inclusive el estado inicial).
 
 | # | Operación | Clave | Código binario |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | + | Aconcagua | 10100111 |
 | 2 | + | Kilimanjaro | 10101010 |
 | 3 | + | Mont Blanc | 00111110 |
@@ -106,7 +109,7 @@ Nota: (+) indica una operación de inserción, (-) indica una operación de baja
 Tabla de dispersión (Bits: 2)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 00 | 0 |
 | 01 | 0 |
 | 10 | 2 |
@@ -115,7 +118,7 @@ Tabla de dispersión (Bits: 2)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 2 | Jose (11001100) | Luis (00001100) |
 | 1 | 1 | Diego (000000011) | |
 | 2 | 2 | Maria (10101010) | |
@@ -125,7 +128,7 @@ Archivo de datos
 Tabla de dispersión (Bits: 2)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 00 | 0 |
 | 01 | 1 |
 | 10 | 2 |
@@ -134,7 +137,7 @@ Tabla de dispersión (Bits: 2)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 2 | Jose (11001100) | Luis (00001100) |
 | 1 | 1 | Diego (000000011) | |
 | 2 | 2 | Maria (10101010) | |
@@ -144,7 +147,7 @@ Archivo de datos
 Tabla de dispersión (Bits: 2)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 00 | 2 |
 | 01 | 1 |
 | 10 | 0 |
@@ -153,7 +156,7 @@ Tabla de dispersión (Bits: 2)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 2 | Jose (11001100) | Luis (00001100) |
 | 1 | 1 | Diego (000000011) | |
 | 2 | 2 | Maria (10101010) | |
@@ -163,7 +166,7 @@ Archivo de datos
 Tabla de dispersión (Bits: 2)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 00 | 2 |
 | 01 | 1 |
 | 10 | 0 |
@@ -172,7 +175,7 @@ Tabla de dispersión (Bits: 2)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 2 | Jose (11001100) | Luis (00001100) |
 | 1 | 2 | Diego (000000011) | |
 | 2 | 2 | Maria (10101010) | |
@@ -226,14 +229,14 @@ Archivo de datos
 Tabla de dispersión (Bits: 1)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 0 | 0 |
 | 1 | 1 |
 
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 1 | | |
 | 1 | 1 | | |
 
@@ -242,7 +245,7 @@ Archivo de datos
 Tabla de dispersión (Bits: 2)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 00 | 0 |
 | 01 | 1 |
 | 10 | 2 |
@@ -251,7 +254,7 @@ Tabla de dispersión (Bits: 2)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 2 | Blanco (11001100) | Rojo (00001100) |
 | 1 | 1 | Rosa (000000011) | |
 | 2 | 2 | Azul (10101010) | |
@@ -270,7 +273,7 @@ d. Produce desborde en el bloque #0, se crea un nuevo bloque en el archivo de da
 Tabla de dispersión (Bits: 2)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 00 | 0 |
 | 01 | 1 |
 | 10 | 0 |
@@ -279,7 +282,7 @@ Tabla de dispersión (Bits: 2)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 1 | | |
 | 1 | 2 | Python (01110011) | |
 | 2 | 2 | Java (10100111) | PHP (01111111) |
@@ -289,7 +292,7 @@ Archivo de datos
 Tabla de dispersión (Bits: 3)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 00 | 0 |
 | 01 | 1 |
 | 10 | 0 |
@@ -298,7 +301,7 @@ Tabla de dispersión (Bits: 3)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 1 | | |
 | 1 | 2 | Python (01110011) | |
 | 2 | 3 | Java (10100111) | PHP (01111111) |
@@ -308,7 +311,7 @@ Archivo de datos
 Tabla de dispersión (Bits: 3)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 000 | 0 |
 | 001 | 1 |
 | 010 | 0 |
@@ -321,7 +324,7 @@ Tabla de dispersión (Bits: 3)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 1 | | |
 | 1 | 2 | | |
 | 2 | 3 | Python (01110011) | |
@@ -332,7 +335,7 @@ Archivo de datos
 Tabla de dispersión (Bits: 3)
 
 | Sufijo | #Bloque |
-|---|---|
+| --- | --- |
 | 000 | 0 |
 | 001 | 0 |
 | 010 | 0 |
@@ -345,7 +348,7 @@ Tabla de dispersión (Bits: 3)
 Archivo de datos
 
 | #Blo | Bits | Clave R1 | Clave R2 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | 1 | | |
 | 1 | 3 | Python (01110011) | |
 | 2 | 3 | Java (10100111) | PHP (01111111) |

@@ -2,24 +2,17 @@
 
 ​FundamentosdeOrganizacióndeDatos
 
-
 ​Práctica3
 
 ​
 
-
 ​Parte1:ajasenarchivos
-
-
 
 1.​Modificarelejercicio4delapráctica1(programadegestióndeempleados)agregandouna
 opciónquepermitarealizarajasfísicasenelarchivo.Laajadeerealizarseapartirdelnúmero
 deempleadoingresadoporteclado,identificandoelregistrocorrespondienteenelarchivo.Una
 vezencontrado,sedeereemplazarelregistroaeliminarporelúltimoregistrodelarchivo,yluego
 truncandoelarchivoenlaposicióndelúltimoregistrodeformataldeevitarduplicados.
-
-
-
 
 2.​Definirunprogramaquegenereunarchivoconregistrosdelongitudfijaconinformaciónde
 productosdeuncomercio.Losdatosseingresanportecladoydecadaproductosealmacena:
@@ -30,9 +23,6 @@ aquellosproductoscuyostockdisponileseaiguala.
 Laajalógicadeeindicarsemarcandoelregistroconuncarácterespecialquesesitúacomo
 prefijoenalgúncampodetipostringasuelección.Porejemplo,sepuedeanteponerelcarácter@
 alnomredelproducto:‘@ArrozGallo1K’.
-
-
-
 
 3.​Realizarunprogramaquegestioneunarchivodelirosdeunalirería.Decadaliroseregistra:
 código,género,título,autor,cantidaddepáginasyprecio.Elprogramadeepresentarunmenú
@@ -108,7 +98,6 @@ archivo.
 ●​Cadaregistroorradodeealmacenarensucampocodigoelvalornegativoqueapunteal
 siguienteregistrolire,formandoasíunapilaenlazada.
 
-
 a.Implementaciónrequerida
 
 Implementarelsiguientemódulo:
@@ -119,14 +108,12 @@ respetandolapolíticadereutilizacióndeespaciodescripta}
 
 procedureagregarFlor(vara:tArchFlores;nomre:string;codigo:integer);
 
-
 .Listadodelarchivo
 
 Realizarunprocedimientoquelisteelcontenidodelarchivoomitiendolasfloreseliminadas(es
 decir,aquellosregistrosqueformanpartedelapiladelires).
 Sepermitemodificaroagregarestructurasauxiliaressiseconsideranecesarioparaotener
 correctamenteellistado.
-
 
 c.Implementeelsiguientemódulo:
 
@@ -135,14 +122,11 @@ políticadescriptaanteriormente}
 
 procedureeliminarFlor(vara:tArchFlores;flor:reg_flor);
 
-
-
 5.​Unacadenadetiendasdeindumentariadisponedeunarchivomaestronoordenadoque
 
 contienelainformacióndelasprendasqueseencuentranalaventa.Decadaprendaseregistran
 
 lossiguientesdatos:cod_prenda,descripción,colores,tipo_prenda,stockyprecio_unitario.
-
 
 Deidoauncamiodetemporada,esnecesarioactualizarlasprendasdisponiles.Paraello,se
 
@@ -154,7 +138,6 @@ realicelaajalógicadelasprendasindicadas;paraello,sedeerámodificarelcampostockd
 
 prendacorrespondienteasignándoleunvalornegativocomomarcadeeliminación.
 
-
 Adicionalmente,sedeeráimplementarotroprocedimientoquepermitaefectivizarlasajas
 
 lógicasrealizadassoreelarchivomaestro.Paraello,sedeerácrearunarchivoauxiliarenelcual
@@ -163,11 +146,9 @@ secopienúnicamenteaquellasprendasquenoesténmarcadascomoeliminadas(esdecir,
 
 aquellascuyostockseamayoroigualacero).
 
-
 Finalmente,unavezcompletadoelprocesodecompactación,elarchivoauxiliardeerá
 
 reemplazaralarchivomaestrooriginal,adoptandosumismonomre.
-
 
 6.​Secuentaconunarchivoquealmacenainformaciónsoreespeciesdeavesenpeligrode
 
@@ -175,11 +156,9 @@ extinción.Decadaespecieseregistranlossiguientesdatos:código,nomredelaespecie,f
 
 descripciónyzonageográfica.Elarchivonoseencuentraordenadoporningúncriterio.
 
-
 Sedeseadesarrollarunprogramaquepermitaeliminarespeciesdeavesextintas.Paraello,el
 
 programadeerácontarcondosprocedimientos:
-
 
 Unprocedimientoque,dadoelcódigodeunaespecie,lamarquecomoorrada(ajalógica).En
 
@@ -192,11 +171,9 @@ registro,sedeeráreemplazarsuposiciónconelúltimoregistrodelarchivoyluegoelimin
 
 últimoregistro,evitandoasídejarespaciosvacíosyregistrosduplicados.
 
-
 Implementeademásunavariantedeesteprocedimientodecompactaciónenlacualelarchivo
 
 seatruncadounaúnicavezalfinalizarelproceso.
-
 
 7.​Secuentaconunarchivoconinformacióndelasdiferentesdistriucionesdelinuxexistentes.De
 
@@ -302,4 +279,3 @@ Notas:
 ●​Losarchivosdetallenoestánordenadosporningúncriterio.
 ●​Unusuariopuedeiniciarmásdeunasesiónelmismodíaenlamismamáquina,oinclusive,en
 diferentesmáquinas.
-

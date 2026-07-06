@@ -1,6 +1,7 @@
 # Clase 5: Traits, POO y Closures
 
 ## Temario
+
 - Traits
 - POO (Programación Orientada a Objetos)
 - Closures
@@ -10,6 +11,7 @@
 ## Traits
 
 ### ¿Qué es?
+
 - Es una funcionalidad particular que tiene un tipo y puede compartir con otros tipos.
 - Podemos usar traits para definir comportamiento de manera abstracta.
 - Se pueden usar traits como límites en tipos de datos genéricos para determinada funcionalidad que el tipo genérico debe cumplir.
@@ -119,12 +121,14 @@ where
 ## POO (Programación Orientada a Objetos)
 
 ### Elementos fundamentales
+
 - Clases
 - Métodos
 - Atributos
 - Objetos
 
 ### Conceptos principales
+
 - **Encapsulamiento**: Permite agrupar comportamiento y datos, y restringirlos a través de su interfaz.
 - **Abstracción**: Representar un objeto del mundo real con sus características apropiadas y que pueda comunicarse con otros objetos sin saber cómo están hechas sus implementaciones.
 - **Polimorfismo**: Distintos tipos de objetos tienen la misma interfaz de comunicación pero su implementación es distinta.
@@ -162,6 +166,7 @@ fn main() {
 ```
 
 ### Abstracción en Rust
+
 La abstracción se logra exponiendo solo la interfaz pública (`pub`) y ocultando los detalles internos de implementación.
 
 ```rust
@@ -311,9 +316,11 @@ fn main() {
 ```
 
 ### Modularidad en Rust
+
 Rust nos brinda esta característica a través de la creación y uso de módulos (`mod`), como así también la importación de librerías externas (`crates`). Hemos estado utilizando esto en las prácticas de la materia.
 
 ### Resumen de POO en Rust
+
 - **Abstracción y Encapsulamiento:** Sí, a través de `pub` y `impl`.
 - **Polimorfismo:** Sí, a través de los **Traits**.
 - **Herencia:** No directa, pero se logra reutilización mediante **Composición** y **Traits**.
@@ -324,6 +331,7 @@ Rust nos brinda esta característica a través de la creación y uso de módulos
 ## Closures
 
 ### ¿Qué son?
+
 Los **closures** son funciones anónimas que se pueden guardar en una variable o pasar como argumentos a otras funciones. Se puede crear el closure en un lugar y luego llamarlo en otro para evaluar algo en un contexto diferente. Permiten la reutilización de código.
 
 ### Ejemplo en contexto: Inventario y preferencias
@@ -379,6 +387,7 @@ fn main() {
 ```
 
 ### Inferencia de tipos en Closures
+
 Rust puede inferir los tipos de los argumentos y el retorno de un closure. Incluso se pueden omitir las llaves si es una sola expresión.
 
 ```rust
@@ -427,9 +436,10 @@ fn main() {
 ### Closures: Referencias y Ownership
 
 Los closures pueden capturar variables de su entorno de tres maneras:
-1.  **Prestado inmutable (`&T`)**: El closure toma prestado el valor.
-2.  **Prestado mutable (`&mut T`)**: El closure toma prestado mutablemente el valor.
-3.  **Movimiento (`move`)**: El closure toma posesión del valor.
+
+1. **Prestado inmutable (`&T`)**: El closure toma prestado el valor.
+2. **Prestado mutable (`&mut T`)**: El closure toma prestado mutablemente el valor.
+3. **Movimiento (`move`)**: El closure toma posesión del valor.
 
 **Ejemplo con préstamo inmutable:**
 

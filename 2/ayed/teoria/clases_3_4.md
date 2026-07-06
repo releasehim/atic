@@ -5,19 +5,21 @@
 Un **árbol binario** es una colección de nodos que puede estar vacía o formada por un nodo distinguido llamado **raíz**, y dos subárboles (izquierdo y derecho) que también son árboles binarios.
 
 ### Terminología Clave
-*   **Nodo**: Elemento del árbol que contiene un dato y referencias a sus hijos.
-*   **Raíz**: El nodo superior del árbol (profundidad 0).
-*   **Hijo**: Nodo que cuelga directamente de otro nodo (padre).
-*   **Hermano**: Nodos que comparten el mismo padre.
-*   **Hoja**: Nodo que no tiene hijos.
-*   **Camino**: Secuencia de nodos donde cada uno es padre del siguiente. La longitud es el número de aristas.
-*   **Profundidad**: Longitud del camino desde la raíz hasta el nodo.
-*   **Altura**: Longitud del camino más largo desde el nodo hasta una hoja. La altura de una hoja es 0. La altura de un árbol es la altura de su raíz.
-*   **Ancestro / Descendiente**: Si existe un camino de \(n_1\) a \(n_2\), \(n_1\) es ancestro de \(n_2\), y \(n_2\) es descendiente de \(n_1\).
+
+* **Nodo**: Elemento del árbol que contiene un dato y referencias a sus hijos.
+* **Raíz**: El nodo superior del árbol (profundidad 0).
+* **Hijo**: Nodo que cuelga directamente de otro nodo (padre).
+* **Hermano**: Nodos que comparten el mismo padre.
+* **Hoja**: Nodo que no tiene hijos.
+* **Camino**: Secuencia de nodos donde cada uno es padre del siguiente. La longitud es el número de aristas.
+* **Profundidad**: Longitud del camino desde la raíz hasta el nodo.
+* **Altura**: Longitud del camino más largo desde el nodo hasta una hoja. La altura de una hoja es 0. La altura de un árbol es la altura de su raíz.
+* **Ancestro / Descendiente**: Si existe un camino de $n_1$ a $n_2$, $n_1$ es ancestro de $n_2$, y $n_2$ es descendiente de $n_1$.
 
 ### Tipos de Árboles Binarios
-1.  **Árbol Lleno (Full Binary Tree)**: Cada nodo interno tiene exactamente 2 hijos y todas las hojas están al mismo nivel (altura `h`).
-2.  **Árbol Completo (Complete Binary Tree)**: Es lleno hasta el nivel `h-1`, y el nivel `h` se completa de izquierda a derecha.
+
+1. **Árbol Lleno (Full Binary Tree)**: Cada nodo interno tiene exactamente 2 hijos y todas las hojas están al mismo nivel (altura `h`).
+2. **Árbol Completo (Complete Binary Tree)**: Es lleno hasta el nivel `h-1`, y el nivel `h` se completa de izquierda a derecha.
 
 ```text
 Árbol Lleno (Altura 2):          Árbol Completo (Altura 2):
@@ -67,10 +69,11 @@ La cátedra proporciona una implementación genérica de un árbol binario (sin 
 ```
 
 ### Métodos Importantes
-*   **Constructores**: `BinaryTree()` crea un árbol vacío (nulo); `BinaryTree(T data)` crea un nodo raíz con el dato especificado.
-*   **Getters/Setters**: Para `data`, `leftChild`, y `rightChild`.
-*   **Verificaciones**: `hasLeftChild()` y `hasRightChild()` son fundamentales antes de intentar acceder a `getLeftChild()` o `getRightChild()`, para evitar `NullPointerException`.
-*   **Estado**: `isEmpty()` verifica si el nodo y sus hijos son `null`; `isLeaf()` verifica si ambos hijos son `null`.
+
+* **Constructores**: `BinaryTree()` crea un árbol vacío (nulo); `BinaryTree(T data)` crea un nodo raíz con el dato especificado.
+* **Getters/Setters**: Para `data`, `leftChild`, y `rightChild`.
+* **Verificaciones**: `hasLeftChild()` y `hasRightChild()` son fundamentales antes de intentar acceder a `getLeftChild()` o `getRightChild()`, para evitar `NullPointerException`.
+* **Estado**: `isEmpty()` verifica si el nodo y sus hijos son `null`; `isLeaf()` verifica si ambos hijos son `null`.
 
 ### Ejemplo de Instanciación y Recorrido Preorden (dentro de la clase)
 
@@ -110,8 +113,9 @@ Representación ASCII del árbol creado:
 ## 3. Recorridos sobre Árboles Binarios
 
 Existen dos grandes familias de recorridos:
-1.  **Recorridos en Profundidad**: Se implementan con **recursión**.
-2.  **Recorrido por Niveles**: Se implementa con **iteración** usando una cola.
+
+1. **Recorridos en Profundidad**: Se implementan con **recursión**.
+2. **Recorrido por Niveles**: Se implementa con **iteración** usando una cola.
 
 ### 3.1 Recorridos en Profundidad (Recursivos)
 
@@ -173,13 +177,15 @@ public class ImpresorArbolBinario<T> {
 ## 4. Árboles de Expresión
 
 Un **árbol de expresión** es un árbol binario que representa una expresión aritmética:
-*   **Nodos internos**: Representan **operadores** (+, -, *, /).
-*   **Nodos externos (hojas)**: Representan **operandos** (números o variables).
+
+* **Nodos internos**: Representan **operadores** (+, -, *, /).
+* **Nodos externos (hojas)**: Representan **operandos** (números o variables).
 
 ### Aplicaciones
-*   Compiladores (análisis, optimización, traducción).
-*   Evaluación de expresiones algebraicas o lógicas.
-*   Generación de notaciones prefija, infija y postfija.
+
+* Compiladores (análisis, optimización, traducción).
+* Evaluación de expresiones algebraicas o lógicas.
+* Generación de notaciones prefija, infija y postfija.
 
 ### Recorridos y Notaciones
 
@@ -195,20 +201,21 @@ Ejemplo de Árbol de Expresión: ((a + b) * (c - d)) / (e + f)
      [a] [b][c][d]
 ```
 
-*   **Inorden (Infija)**: `(((a + b) * (c – d)) / (e + f))`. Requiere paréntesis para preservar el orden.
-*   **Preorden (Prefija)**: `/*+ab-cd+ef`. No necesita paréntesis.
-*   **Postorden (Postfija)**: `ab+cd-*ef+/`. No necesita paréntesis.
+* **Inorden (Infija)**: `(((a + b) * (c – d)) / (e + f))`. Requiere paréntesis para preservar el orden.
+* **Preorden (Prefija)**: `/*+ab-cd+ef`. No necesita paréntesis.
+* **Postorden (Postfija)**: `ab+cd-*ef+/`. No necesita paréntesis.
 
 ### 4.1 Construcción desde Expresión Postfija (Estrategia 1: Pila)
 
 Se lee la expresión postfija de izquierda a derecha usando una **pila**.
-1.  Si es **operando**: Crear nodo y apilarlo.
-2.  Si es **operador**:
-    *   Crear nodo `R` con el operador.
-    *   Desapilar y asignar como `hijo derecho` de `R`.
-    *   Desapilar y asignar como `hijo izquierdo` de `R`.
-    *   Apilar `R`.
-3.  Al final, la pila contiene un único nodo que es la raíz del árbol.
+
+1. Si es **operando**: Crear nodo y apilarlo.
+2. Si es **operador**:
+    * Crear nodo `R` con el operador.
+    * Desapilar y asignar como `hijo derecho` de `R`.
+    * Desapilar y asignar como `hijo izquierdo` de `R`.
+    * Apilar `R`.
+3. Al final, la pila contiene un único nodo que es la raíz del árbol.
 
 ```java
 public BinaryTree<Character> convertirPostfija(String exp) {
@@ -229,12 +236,13 @@ public BinaryTree<Character> convertirPostfija(String exp) {
 ### 4.2 Construcción desde Expresión Prefija (Estrategia 2: Recursión)
 
 Se lee la expresión prefija de izquierda a derecha usando **recursión**.
-1.  Tomar el primer carácter de la expresión.
-2.  Crear un nodo `R`.
-3.  Si es **operador**:
-    *   `R.addLeftChild(convertirPrefija(resto))`.
-    *   `R.addRightChild(convertirPrefija(resto))`.
-4.  Si es **operando**: Retornar el nodo `R`.
+
+1. Tomar el primer carácter de la expresión.
+2. Crear un nodo `R`.
+3. Si es **operador**:
+    * `R.addLeftChild(convertirPrefija(resto))`.
+    * `R.addRightChild(convertirPrefija(resto))`.
+4. Si es **operando**: Retornar el nodo `R`.
 
 ```java
 public BinaryTree<Character> convertirPrefija(StringBuffer exp) {
@@ -251,10 +259,11 @@ public BinaryTree<Character> convertirPrefija(StringBuffer exp) {
 ```
 
 ### 4.3 Construcción desde Expresión Infija (Estrategia 3: Dos Pasos)
-1.  Convertir la expresión infija a postfija utilizando una pila y considerando las **prioridades de operadores**.
-2.  Aplicar la Estrategia 1 (Postfija → Árbol).
 
-*   **Prioridades**: `^` > `* /` > `+ -`. Los `(` se apilan siempre y se desapilan solo al encontrar un `)`.
+1. Convertir la expresión infija a postfija utilizando una pila y considerando las **prioridades de operadores**.
+2. Aplicar la Estrategia 1 (Postfija → Árbol).
+
+* **Prioridades**: `^` > `* /` > `+ -`. Los `(` se apilan siempre y se desapilan solo al encontrar un `)`.
 
 ### 4.4 Evaluación de un Árbol de Expresión (Recursivo)
 
@@ -282,10 +291,12 @@ public Integer evaluar(BinaryTree<Character> arbol) {
 ### 5.1 Ejercicio: Suma de Árboles Binarios (Ejemplo 1 del video)
 
 **Problema**: Dados dos árboles binarios `arbol1` y `arbol2` de enteros, implementar un método que devuelva un nuevo árbol que contenga la suma de los nodos en la misma posición.
-*   **Condición**: Solo se pueden sumar si tienen la **misma estructura**. Si las estructuras difieren, se debe devolver un árbol vacío.
-*   **Estrategia**: Usar un método auxiliar privado que utiliza recursión y una variable booleana `estructuraValida` para propagar el éxito/fracaso de la operación.
+
+* **Condición**: Solo se pueden sumar si tienen la **misma estructura**. Si las estructuras difieren, se debe devolver un árbol vacío.
+* **Estrategia**: Usar un método auxiliar privado que utiliza recursión y una variable booleana `estructuraValida` para propagar el éxito/fracaso de la operación.
 
 **Código Esencial**:
+
 ```java
 public BinaryTree<Integer> sumarArboles(BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2) {
     BinaryTree<Integer> suma = new BinaryTree<>(); // Árbol vacío
@@ -336,13 +347,15 @@ Diagrama del ejercicio (Suma de Árboles):
 **Problema**: Dado un árbol binario de enteros, devolver el primer **camino** (desde la raíz hasta una hoja) que contenga una cantidad de números pares mayor o igual a un parámetro `min`.
 
 **Estrategia**: Recorrido en profundidad (Preorden) con **backtracking**.
-*   Se mantiene una lista `camino` con los nodos visitados hasta el momento.
-*   Se lleva un contador `paresAcumulados`.
-*   Al llegar a una **hoja**, se verifica `paresAcumulados >= min`. Si se cumple, se retorna la lista. Si no, se elimina el último elemento de la lista (`backtracking`) antes de regresar.
-*   Se usa una variable booleana `encontrado` para cortar la recursión y no recorrer el resto del árbol cuando se halla la solución.
-*   **Atención**: `encontrado` debe retornarse en el método auxiliar para propagar el éxito (porque los tipos primitivos se pasan por valor y no se modificaría la variable original si no se retorna).
+
+* Se mantiene una lista `camino` con los nodos visitados hasta el momento.
+* Se lleva un contador `paresAcumulados`.
+* Al llegar a una **hoja**, se verifica `paresAcumulados >= min`. Si se cumple, se retorna la lista. Si no, se elimina el último elemento de la lista (`backtracking`) antes de regresar.
+* Se usa una variable booleana `encontrado` para cortar la recursión y no recorrer el resto del árbol cuando se halla la solución.
+* **Atención**: `encontrado` debe retornarse en el método auxiliar para propagar el éxito (porque los tipos primitivos se pasan por valor y no se modificaría la variable original si no se retorna).
 
 **Código Esencial**:
+
 ```java
 public List<Integer> resolver(BinaryTree<Integer> arbol, int min) {
     List<Integer> camino = new LinkedList<>();
@@ -380,9 +393,10 @@ private boolean buscarCamino(BinaryTree<Integer> arbol, int min, List<Integer> c
 **Problema (SPOJ - UCV2013J)**: Se recibe un *stream* de enteros que representa un árbol binario completo (llenando los niveles de izquierda a derecha). El primer número es `N`, seguido de `N` valencias. Se debe calcular la suma de las valencias de las **hojas**.
 
 **Estrategia (Construcción Iterativa)**: Dado que el árbol es **completo**, se puede usar una cola para construirlo nivel por nivel.
-*   El primer valor después de `N` es la raíz.
-*   Los siguientes valores se asignan secuencialmente a los hijos izquierdos y derechos de los nodos en la cola.
-*   **Estrategia (Construcción Recursiva en Array)**: Como el árbol es completo, si almacenamos los datos en un arreglo (índice 1 en adelante), el hijo izquierdo de un nodo en la posición `i` está en `2*i`, y el hijo derecho en `2*i+1`.
+
+* El primer valor después de `N` es la raíz.
+* Los siguientes valores se asignan secuencialmente a los hijos izquierdos y derechos de los nodos en la cola.
+* **Estrategia (Construcción Recursiva en Array)**: Como el árbol es completo, si almacenamos los datos en un arreglo (índice 1 en adelante), el hijo izquierdo de un nodo en la posición `i` está en `2*i`, y el hijo derecho en `2*i+1`.
 
 ```java
 // Construcción Recursiva a partir de un arreglo `stream`
@@ -440,8 +454,10 @@ c) Pre: 8, 10, 13, 15    | In: 13, 10, 15, 8    | Post: 13, 15, 10, 8
 ### 5.5 Ejercicio Avanzado (PDF 3.1 - Construcción desde Recorridos)
 
 **Ejercicio**: Dados los recorridos `inorden: C B F E G A D I H` y `postorden: C F G E B I H D A`, construir el árbol original.
-*   **Método**: En postorden, el último elemento es la raíz (`A`). En inorden, todo lo que está a la izquierda de `A` (`C B F E G`) es el subárbol izquierdo, y lo que está a la derecha (`D I H`) es el subárbol derecho. Se repite el proceso recursivamente.
-*   **Árbol Final**:
+
+* **Método**: En postorden, el último elemento es la raíz (`A`). En inorden, todo lo que está a la izquierda de `A` (`C B F E G`) es el subárbol izquierdo, y lo que está a la derecha (`D I H`) es el subárbol derecho. Se repite el proceso recursivamente.
+* **Árbol Final**:
+
 ```text
                 [A]
                /   \

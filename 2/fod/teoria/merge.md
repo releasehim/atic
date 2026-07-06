@@ -1,18 +1,24 @@
 # 5 - Merge
 
 ## Diapositiva 1
+
 Fundamentos de Organización de Datos
 1
 Archivos
 Merge
 
 ## Diapositiva 2
+
 ### Algorítmica clásica sobre archivos
+
 #### Merge
+
 Proceso mediante el cual se genera un nuevo archivo a partir de otros archivos existentes.
 
 ## Diapositiva 3
+
 ### Ejemplo – Merge
+
 ```pascal
 program ejemplo;
 const
@@ -29,7 +35,9 @@ type
 ```
 
 ## Diapositiva 4
+
 ### Ejemplo: variables y procedimiento leer
+
 ```pascal
 var
   det1, det2, det3, mae: arc_productos; 
@@ -45,7 +53,9 @@ end;
 ```
 
 ## Diapositiva 5
+
 ### Ejemplo: procedimiento minimo
+
 ```pascal
 procedure minimo(var det1, det2, det3: arc_productos; var r1, r2, r3, min: producto);
 begin
@@ -64,10 +74,13 @@ begin
     end;
 end;
 ```
+
 *(Nota: En la diapositiva original figura r2.cod y r3.cod en el else if, a diferencia de r1.codigo).*
 
 ## Diapositiva 6
+
 ### Ejemplo: programa principal
+
 ```pascal
 begin
   assign(mae, 'maestro');
@@ -87,7 +100,9 @@ begin
 ```
 
 ## Diapositiva 7
+
 ### Ejemplo: procesamiento y cierre
+
 ```pascal
   {se procesan todos los registros de los archivos detalle}
   while (min.codigo <> valoralto) do begin
@@ -103,7 +118,9 @@ end.
 ```
 
 ## Diapositiva 8
+
 ### Otra variante – Productos repetidos en los archivos detalles
+
 ```pascal
 while (min.codigo <> valoralto) do begin
   aux := min;
